@@ -21,7 +21,8 @@
       <img src="assets/sunflower_sprite.png" alt="Girasol" class="intro-sunflower-img" id="intro-flower-img">
     </div>
     <div class="intro-text">TOCA PARA INICIAR 🌻</div>
-    <div class="intro-subtext">PARAMIMEY • FLORES AMARILLAS DE ULI 💛</div>
+    <div class="intro-subtext">Para la niña de mi vida Mey 💛</div>
+    <div class="intro-subtext-2">Flores amarillas de ulicito ✨</div>
   </div>
 
   <!-- INTERFAZ SUPERIOR (ENCABEZADO Y CONTROLES) -->
@@ -33,20 +34,27 @@
         </h1>
         <div class="sub-title">Flores amarillas de Uli para Meycita bella (Maybeth) 💛</div>
         <div class="growth-pill" id="growth-pill">
-          <span>🌻 Girasol creciendo:</span> <span id="opened-count">0</span> / 12 notas
+          <span>🌻 Girasol creciendo:</span> <span id="opened-count">0</span> / 20 notas
         </div>
       </div>
 
       <div class="controls-group">
-        <button id="btn-audio" class="ctrl-btn" title="Música de fondo">
-          <div class="music-bars" id="music-bars">
-            <span class="music-bar"></span>
-            <span class="music-bar"></span>
-            <span class="music-bar"></span>
-            <span class="music-bar"></span>
+        <!-- CONTROL DE MÚSICA Y VOLUMEN -->
+        <div class="audio-ctrl-container">
+          <button id="btn-audio" class="ctrl-btn" title="Música de fondo">
+            <div class="music-bars" id="music-bars">
+              <span class="music-bar"></span>
+              <span class="music-bar"></span>
+              <span class="music-bar"></span>
+              <span class="music-bar"></span>
+            </div>
+            <span id="audio-status-text">Música</span>
+          </button>
+          <div class="volume-box">
+            <span class="vol-icon" id="vol-icon" title="Volumen">🔊</span>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.75" class="volume-slider" title="Ajustar volumen">
           </div>
-          <span id="audio-status-text">Música</span>
-        </button>
+        </div>
 
         <button id="btn-reset-cam" class="ctrl-btn" title="Restablecer vista">
           <span>🌌</span>
@@ -59,12 +67,12 @@
     <div class="bottom-banner" id="bottom-banner">
       <div>✨ Toca cada flor para leer tu mensaje y hacer florecer tu girasol • Arrastra para girar ✨</div>
       <div class="apology-note">
-        Lamento solo enviar esto por esta vez mi vidita, ando estudiando mucho y no es una excusa pero lo hago con todo mi amor. Te debo algo muchote grandote... ¡Te amodoro mucho, Meycita bella! ❤️ — Tu Uli
+        Espero que te guste al menos solamente esto por esta vez mi vida, ya que andamos en semana de exámenes y yo sé que no es una excusa pero lo hago con mucho amor. Quiero que tengas en cuenta de que te debo algo muchísimo más grandote... ¡Te amodoro con toda mi alma! ❤️ — Tu Uli
       </div>
     </div>
   </div>
 
-  <!-- MODAL ROMÁNTICO EMERGENTE (GLASSMORPHISM POPUP) -->
+  <!-- MODAL ROMÁNTICO DE FLORES (GLASSMORPHISM POPUP CARD) -->
   <div id="flower-modal">
     <div class="modal-card">
       <div class="modal-badge">🌻</div>
@@ -79,10 +87,28 @@
     </div>
   </div>
 
-  <!-- PISTA DE AUDIO ORIGINAL EXTRAÍDA DEL VIDEO -->
+  <!-- MODAL SECRETO: FOTOS CUCHI CUCHI (EASTER EGG) -->
+  <div id="photo-modal" class="photo-modal">
+    <div class="photo-card">
+      <div class="photo-badge">💖</div>
+      <h2 id="secret-photo-title" class="photo-title">Para mi Cuchi Cuchi hermosa 💕</h2>
+      <div class="photo-img-container">
+        <img id="secret-photo-img" class="secret-photo-img" src="assets/foto_cuchicuchi_1.jpg" alt="Foto Cuchi Cuchi">
+      </div>
+      <p id="secret-photo-desc" class="photo-desc">
+        Eres lo más bonito que me ha pasado en la vida, mi amorcito. Cada sonrisa tuya ilumina mi universo entero. ¡Te amodoro infinito, mi Meycita bella! 💛
+      </p>
+      <div class="photo-actions">
+        <button id="btn-mirame" class="btn-mirame hidden">✨ ¡Mírame! ✨</button>
+        <button id="photo-modal-close-btn" class="modal-close-btn">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PISTA DE AUDIO ORIGINAL -->
   <audio id="bg-music" src="musica.mp3" preload="auto" loop></audio>
 
-  <!-- SCRIPTS (THREE.JS Y ORBITCONTROLS LOCALES CON FALLBACK A CDN) -->
+  <!-- THREE.JS Y ORBITCONTROLS LOCALES CON CDN FALLBACK -->
   <script src="three.min.js"></script>
   <script>
     if (typeof THREE === 'undefined') {

@@ -11,9 +11,9 @@
   --glow-color: rgba(255, 215, 0, 0.75);
   --pink-accent: #ff80ab;
   --dark-bg: #030206;
-  --card-bg: rgba(18, 12, 28, 0.88);
-  --card-border: rgba(255, 215, 0, 0.35);
-  --card-glow: 0 0 35px rgba(255, 179, 0, 0.3), inset 0 0 15px rgba(255, 215, 0, 0.1);
+  --card-bg: rgba(18, 12, 28, 0.92);
+  --card-border: rgba(255, 215, 0, 0.4);
+  --card-glow: 0 0 35px rgba(255, 179, 0, 0.35), inset 0 0 15px rgba(255, 215, 0, 0.1);
 }
 
 * {
@@ -59,7 +59,7 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle at center, #150d24 0%, #06030c 60%, #020104 100%);
+  background: radial-gradient(circle at center, #180e2b 0%, #080312 60%, #020104 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,39 +87,47 @@ html, body {
 
 .intro-sunflower-aura {
   position: absolute;
-  width: 220px;
-  height: 220px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.45) 0%, rgba(255, 179, 0, 0.2) 45%, transparent 75%);
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 0%, rgba(255, 179, 0, 0.22) 45%, transparent 75%);
   animation: pulse-aura 3s ease-in-out infinite;
-  filter: blur(10px);
+  filter: blur(12px);
 }
 
 .intro-sunflower-img {
   width: 150px;
   height: 150px;
   object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  filter: drop-shadow(0 0 22px rgba(255, 215, 0, 0.85));
   animation: float-intro 3.5s ease-in-out infinite;
   z-index: 2;
 }
 
 .intro-text {
   font-family: 'Caveat', 'Dancing Script', cursive;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
   color: #fff9c4;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 160, 0, 0.6);
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.95), 0 0 32px rgba(255, 160, 0, 0.7);
   letter-spacing: 1px;
   animation: pulse-text 2s ease-in-out infinite;
   text-align: center;
 }
 
 .intro-subtext {
-  margin-top: 12px;
-  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  margin-top: 14px;
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.3rem, 3.2vw, 1.7rem);
   color: #ffe082;
-  opacity: 0.85;
-  font-weight: 300;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+  text-align: center;
+}
+
+.intro-subtext-2 {
+  margin-top: 6px;
+  font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+  color: #ffd54f;
+  opacity: 0.88;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
@@ -139,7 +147,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px 30px;
+  padding: 22px 28px;
 }
 
 .header-bar {
@@ -182,19 +190,20 @@ html, body {
 }
 
 .growth-pill {
-  background: rgba(40, 20, 5, 0.85);
+  background: rgba(35, 18, 5, 0.88);
   border: 1.5px solid #ffd700;
   color: #fff9c4;
-  padding: 4px 14px;
+  padding: 5px 16px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   margin-top: 6px;
   width: fit-content;
-  max-width: 260px;
+  max-width: 340px;
+  white-space: nowrap;
   box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
   animation: pulse-growth 2.5s ease-in-out infinite;
 }
@@ -210,7 +219,41 @@ html, body {
   gap: 12px;
 }
 
+/* Audio Control Container with Volume Box */
+.audio-ctrl-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(22, 14, 34, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 30px;
+  padding: 4px 12px 4px 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
 .ctrl-btn {
+  background: transparent;
+  border: none;
+  color: #ffe082;
+  padding: 8px 12px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.ctrl-btn:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+#btn-reset-cam {
   background: rgba(25, 16, 38, 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 215, 0, 0.4);
@@ -228,12 +271,61 @@ html, body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.15);
 }
 
-.ctrl-btn:hover {
+#btn-reset-cam:hover {
   background: rgba(45, 28, 70, 0.85);
   border-color: var(--primary-gold);
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.volume-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vol-icon {
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 70px;
+  height: 5px;
+  background: rgba(255, 215, 0, 0.25);
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.9);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.9);
+  cursor: pointer;
 }
 
 .music-bars {
@@ -264,9 +356,9 @@ html, body {
 /* Bottom Instruction Banner */
 .bottom-banner {
   align-self: center;
-  background: rgba(18, 10, 28, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  background: rgba(18, 10, 28, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 215, 0, 0.35);
   padding: 10px 24px;
   border-radius: 20px;
   color: #fff9c4;
@@ -283,10 +375,10 @@ html, body {
 }
 
 .apology-note {
-  font-size: clamp(0.66rem, 1.6vw, 0.75rem);
+  font-size: clamp(0.68rem, 1.6vw, 0.78rem);
   color: #ffe0b2;
-  opacity: 0.9;
-  line-height: 1.35;
+  opacity: 0.92;
+  line-height: 1.4;
   font-family: 'Montserrat', sans-serif;
   font-style: italic;
 }
@@ -305,7 +397,7 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgba(2, 1, 5, 0.75);
+  background: rgba(2, 1, 5, 0.78);
   backdrop-filter: blur(14px);
   opacity: 0;
   visibility: hidden;
@@ -339,7 +431,6 @@ html, body {
   transform: scale(1) translateY(0);
 }
 
-/* Top little floating sunflower badge */
 .modal-badge {
   position: absolute;
   top: 14px;
@@ -351,11 +442,11 @@ html, body {
 .modal-img-container {
   position: relative;
   width: 100%;
-  height: 230px;
+  height: 220px;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   border-radius: 20px;
-  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(25, 15, 40, 0.6) 70%, transparent 100%);
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.18) 0%, rgba(25, 15, 40, 0.6) 70%, transparent 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -382,11 +473,11 @@ html, body {
 
 .modal-desc {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1rem, 2.5vw, 1.12rem);
+  font-size: clamp(0.95rem, 2.4vw, 1.1rem);
   line-height: 1.65;
   color: #ede7f6;
-  margin-bottom: 26px;
-  padding: 0 10px;
+  margin-bottom: 24px;
+  padding: 0 8px;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -410,6 +501,140 @@ html, body {
   color: #ffffff;
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
   transform: scale(1.05);
+}
+
+/* ==========================================================================
+   SECRET PHOTO MODAL (CUCHI CUCHI EASTER EGG)
+   ========================================================================== */
+.photo-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(3, 1, 8, 0.85);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+}
+
+.photo-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.photo-card {
+  position: relative;
+  background: rgba(24, 14, 38, 0.94);
+  border: 2px solid rgba(255, 105, 180, 0.5);
+  box-shadow: 0 0 40px rgba(255, 20, 147, 0.35), 0 0 20px rgba(255, 215, 0, 0.25);
+  border-radius: 28px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.photo-modal.active .photo-card {
+  transform: scale(1) translateY(0);
+}
+
+.photo-badge {
+  position: absolute;
+  top: 12px;
+  font-size: 1.5rem;
+  animation: pulse-aura 2s ease-in-out infinite;
+}
+
+.photo-title {
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  color: #fff0f6;
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.9), 0 0 25px rgba(255, 215, 0, 0.5);
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.photo-img-container {
+  position: relative;
+  width: 100%;
+  max-height: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 105, 180, 0.3);
+  margin-bottom: 16px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secret-photo-img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  border-radius: 18px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.photo-desc {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
+  line-height: 1.6;
+  color: #f8e1ec;
+  margin-bottom: 18px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.85);
+  padding: 0 8px;
+}
+
+.photo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-mirame {
+  background: linear-gradient(135deg, #ff1493, #ffd700);
+  border: none;
+  color: #ffffff;
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 32px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(255, 20, 147, 0.8), 0 0 15px rgba(255, 215, 0, 0.6);
+  animation: pulse-mirame 1.8s ease-in-out infinite;
+  transition: transform 0.25s ease, opacity 0.3s ease;
+}
+
+.btn-mirame:hover {
+  transform: scale(1.08);
+}
+
+.btn-mirame.hidden {
+  display: none;
+}
+
+@keyframes pulse-mirame {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 20, 147, 0.7); }
+  50% { transform: scale(1.06); box-shadow: 0 0 35px rgba(255, 20, 147, 1), 0 0 25px rgba(255, 215, 0, 0.8); }
 }
 
 /* ==========================================================================
@@ -440,34 +665,44 @@ html, body {
   100% { height: 16px; }
 }
 
-@keyframes float-banner {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
 /* ==========================================================================
    RESPONSIVE ADJUSTMENTS
    ========================================================================== */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   #ui-overlay {
-    padding: 14px 16px;
+    padding: 14px 14px;
   }
   
   .main-title {
-    font-size: 1.55rem;
+    font-size: 1.45rem;
   }
 
   .sub-title {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .growth-pill {
+    font-size: 0.76rem;
+    padding: 3px 10px;
+  }
+
+  .volume-slider {
+    width: 50px;
   }
 
   .ctrl-btn {
+    padding: 6px 10px;
+    font-size: 0.76rem;
+  }
+
+  #btn-reset-cam {
     padding: 6px 12px;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
   }
 
   .modal-card {
-    max-width: 92vw;
+    max-width: 94vw;
     padding: 24px 16px 20px;
     border-radius: 22px;
   }
@@ -486,11 +721,27 @@ html, body {
     font-size: 0.88rem;
     line-height: 1.45;
     margin-bottom: 18px;
-    padding: 0 4px;
   }
 
   .modal-close-btn {
-    padding: 8px 34px;
+    padding: 8px 32px;
     font-size: 1.3rem;
+  }
+
+  .photo-card {
+    max-width: 94vw;
+    padding: 22px 14px 18px;
+  }
+
+  .photo-img-container {
+    max-height: 240px;
+  }
+
+  .photo-title {
+    font-size: 1.6rem;
+  }
+
+  .photo-desc {
+    font-size: 0.85rem;
   }
 }
