@@ -1,6 +1,12 @@
 /**
  * ==========================================================================
  * FLORES AMARILLAS PARA MAYBETH - 3D INTERACTIVE GALAXY & FLOWERS
+ * Personalizado especialmente para Maybeth con:
+ * - Koala Celestial Vayolett
+ * - Corazones rojos con Uli
+ * - Letrero gigante destacado de MAYBETH
+ * - Girasol interactivo en crecimiento al abrir cada notita
+ * - Apodos cariñosos: Amorshote, Mi vidita, Te amodoro, Meycita bella
  * ==========================================================================
  */
 
@@ -21,12 +27,12 @@
     outsideColor: '#ff8f00'
   };
 
-  // --- LISTA DE FLORES Y DEDICATORIAS PARA MAYBETH ---
+  // --- LISTA DE FLORES Y DEDICATORIAS CON APODOS CARIÑOSOS ---
   const FLOWERS_DATA = [
     {
       id: 'flor-1',
       title: 'Gracias por quedarte',
-      desc: 'No todos se quedan cuando las cosas no son perfectas. Tú sí. Y eso, para mí, vale más que mil palabras bonitas. Gracias por estar incondicionalmente a mi lado, Maybeth.',
+      desc: 'No todos se quedan cuando las cosas no son perfectas. Tú sí, mi vidita. Y eso, para mí, vale más que mil palabras bonitas. Gracias por estar siempre a mi lado, Meycita bella. ¡Te amodoro con todo mi ser!',
       type: 'sunflower',
       sprite: 'assets/sprite_sunflower.png',
       svg: 'assets/sunflower.svg',
@@ -37,7 +43,7 @@
     {
       id: 'flor-2',
       title: 'Tu lugar aquí',
-      desc: 'Donde sea que estés, ahí quiero estar yo también. En mis días buenos y en los difíciles, tú eres el lugar al que siempre quiero volver. Feliz día, amor mío.',
+      desc: 'Donde sea que estés, ahí quiero estar yo también, amorshote. En mis días buenos y en los difíciles, tú eres el lugar al que siempre quiero volver. Eres mi hogar, mi vidita hermosa.',
       type: 'bouquet',
       sprite: 'assets/sprite_bouquet.png',
       svg: 'assets/bouquet.svg',
@@ -48,7 +54,7 @@
     {
       id: 'flor-3',
       title: 'Eres mi sol de siempre',
-      desc: 'Dicen que los girasoles buscan la luz del sol en el cielo para florecer... yo no necesito buscar muy lejos, porque el sol que ilumina toda mi vida eres tú, Maybeth.',
+      desc: 'Dicen que los girasoles buscan la luz del sol en el cielo para florecer... yo no necesito buscar muy lejos, porque el sol que ilumina toda mi vida eres tú, Meycita bella. Te amodoro infinito.',
       type: 'roses',
       sprite: 'assets/sprite_roses.png',
       svg: 'assets/roses.svg',
@@ -59,7 +65,7 @@
     {
       id: 'flor-4',
       title: 'Hoy pienso en ti',
-      desc: 'Hoy, como todos los días, estás presente en cada uno de mis pensamientos. Cada recuerdo contigo es una sonrisa sincera que no puedo evitar.',
+      desc: 'Hoy, como todos los días y cada segundo, estás presente en cada uno de mis pensamientos, amorshote. Cada recuerdo contigo es una sonrisa boba que no puedo evitar.',
       type: 'daisy',
       sprite: 'assets/sprite_daisy.png',
       svg: 'assets/daisy.svg',
@@ -70,7 +76,7 @@
     {
       id: 'flor-5',
       title: 'Gracias por existir',
-      desc: 'El universo es inmenso y tiene miles de millones de estrellas, pero mi mayor fortuna y bendición es haberte encontrado a ti en este mundo. Gracias por existir, Maybeth.',
+      desc: 'El universo es inmenso y tiene miles de millones de estrellas, pero mi mayor bendición y fortuna es tenerte a ti en este mundo, mi vidita. Gracias por existir y llenar mi vida de luz.',
       type: 'bouquet',
       sprite: 'assets/sprite_bouquet.png',
       svg: 'assets/bouquet.svg',
@@ -81,7 +87,7 @@
     {
       id: 'flor-6',
       title: 'Mi lugar favorito',
-      desc: 'Mi lugar favorito en el mundo no es ninguna ciudad lejana ni un paisaje exótico... es simplemente estar abrazado a ti, escuchando tu risa y sintiendo tu paz.',
+      desc: 'Mi lugar favorito en el mundo no es ninguna ciudad lejana ni un paisaje exótico... es simplemente estar abrazado a ti, Meycita bella, escuchando tu risa y sintiendo tu paz.',
       type: 'sunflower',
       sprite: 'assets/sprite_sunflower.png',
       svg: 'assets/sunflower.svg',
@@ -92,7 +98,7 @@
     {
       id: 'flor-7',
       title: 'Un girasol para ti',
-      desc: 'Si pudiera regalarte un girasol por cada motivo que me das para sonreír y ser feliz, tendrías un universo entero de flores solo para ti.',
+      desc: 'Si pudiera regalarte un girasol por cada motivo que me das para sonreír y ser feliz, mi amorshote, tendrías un universo entero de flores solo para ti. ¡Te amodoro tanto!',
       type: 'daisy',
       sprite: 'assets/sprite_daisy.png',
       svg: 'assets/daisy.svg',
@@ -103,7 +109,7 @@
     {
       id: 'flor-8',
       title: 'Septiembre siempre',
-      desc: 'Que este 21 de septiembre quede grabado en tu corazón con la certeza de que mi amor por ti florece con más brillo y fuerza con cada amanecer.',
+      desc: 'Que este 21 de septiembre quede grabado en tu corazoncito. Aunque ande a mil estudiando, mi amor por ti florece con más fuerza cada día, mi vidita hermosa.',
       type: 'roses',
       sprite: 'assets/sprite_roses.png',
       svg: 'assets/roses.svg',
@@ -114,7 +120,7 @@
     {
       id: 'flor-9',
       title: 'El amarillo te queda bien',
-      desc: 'Dicen que el amarillo es el color de la alegría y los nuevos comienzos, pero a mí simplemente me recuerda a tu luz tan única y a tu sonrisa hermosa.',
+      desc: 'Dicen que el amarillo es el color de la alegría y los nuevos comienzos, pero a mí simplemente me recuerda a tu luz tan única. ¡El amarillo te queda hermoso, Meycita bella!',
       type: 'sunflower',
       sprite: 'assets/sprite_sunflower.png',
       svg: 'assets/sunflower.svg',
@@ -125,7 +131,7 @@
     {
       id: 'flor-10',
       title: 'Gracias por tanto',
-      desc: 'Gracias por tu ternura, por tu comprensión, por hacerme reír y por convertir los momentos más sencillos en recuerdos inolvidables.',
+      desc: 'Gracias por tu ternura, por tu comprensión, por hacerme reír y por hacerme sentir el hombre más afortunado de todo el mundo, mi amorshote adorado.',
       type: 'bouquet',
       sprite: 'assets/sprite_bouquet.png',
       svg: 'assets/bouquet.svg',
@@ -136,7 +142,7 @@
     {
       id: 'flor-11',
       title: 'Contigo siempre',
-      desc: 'En cada paso, en cada sueño y en cada camino que elijamos recorrer, quiero ir de tu mano. Mi mayor deseo es verte feliz y cuidarte siempre, Maybeth.',
+      desc: 'En cada paso, en cada sueño y en cada camino que elijamos recorrer, quiero ir de tu mano. Mi mayor deseo es cuidarte y verte feliz siempre, mi vidita.',
       type: 'roses',
       sprite: 'assets/sprite_roses.png',
       svg: 'assets/roses.svg',
@@ -146,8 +152,8 @@
     },
     {
       id: 'flor-12',
-      title: 'Para ti, Maybeth',
-      desc: 'Esta galaxia dorada fue creada con todo mi amor pensando únicamente en ti. Eres lo más valioso y especial de mi vida. ¡Feliz Día de las Flores Amarillas, te amo!',
+      title: 'Para ti, Meycita bella',
+      desc: 'Esta galaxia dorada fue creada con todo mi amor pensando únicamente en ti. Eres lo más valioso y hermoso de mi vida. ¡Feliz Día de las Flores Amarillas, te amodoro!',
       type: 'sunflower',
       sprite: 'assets/sprite_sunflower.png',
       svg: 'assets/sunflower.svg',
@@ -160,6 +166,7 @@
   // --- VARIABLES DE THREE.JS ---
   let scene, camera, renderer, controls;
   let galaxyPoints, skySunflowerPoints, accretionMesh, centralMaybethGroup;
+  let vayolettSprite, centerSunflowerPlant, finaleBurstPoints;
   let flowersGroup = new THREE.Group();
   let interactiveObjects = [];
   let raycaster = new THREE.Raycaster();
@@ -168,6 +175,11 @@
   let clock = new THREE.Clock();
   let isStarted = false;
   let textureLoader = new THREE.TextureLoader();
+
+  // Sistema de progreso del girasol
+  const openedNotes = new Set();
+  let sunflowerGrowthProgress = 0;
+  let hasTriggeredFinale = false;
 
   // Elementos DOM
   const introScreen = document.getElementById('intro-screen');
@@ -182,6 +194,7 @@
   const audioStatusText = document.getElementById('audio-status-text');
   const btnResetCam = document.getElementById('btn-reset-cam');
   const bottomBanner = document.getElementById('bottom-banner');
+  const openedCountElem = document.getElementById('opened-count');
 
   // --- INICIALIZACIÓN PRINCIPAL ---
   function init() {
@@ -194,7 +207,6 @@
     // 2. Cámara
     const aspect = window.innerWidth / window.innerHeight;
     camera = new THREE.PerspectiveCamera(55, aspect, 0.5, 3000);
-    // Posición inicial panorámica inclinada
     camera.position.set(0, 95, 155);
 
     // 3. Renderizador WebGL
@@ -202,7 +214,7 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.3;
+    renderer.toneMappingExposure = 1.35;
     container.appendChild(renderer.domElement);
 
     // 4. Controles Orbitales (OrbitControls)
@@ -211,11 +223,10 @@
     controls.dampingFactor = 0.06;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 0.5;
-    controls.maxDistance = 400;
+    controls.maxDistance = 450;
     controls.minDistance = 35;
     controls.target.set(0, 0, 0);
 
-    // Pausar auto-rotación al interactuar
     let autoRotateTimeout;
     controls.addEventListener('start', () => {
       controls.autoRotate = false;
@@ -229,29 +240,24 @@
     });
 
     // 5. Luces ambientales suaves
-    const ambientLight = new THREE.AmbientLight(0xfff8e1, 1.2);
+    const ambientLight = new THREE.AmbientLight(0xfff8e1, 1.3);
     scene.add(ambientLight);
 
-    const centerPointLight = new THREE.PointLight(0xffd700, 3, 200);
-    centerPointLight.position.set(0, 5, 0);
+    const centerPointLight = new THREE.PointLight(0xffd700, 3.5, 250);
+    centerPointLight.position.set(0, 8, 0);
     scene.add(centerPointLight);
 
     // 6. Construir componentes del universo
     createStarfield();
     createSpiralGalaxy();
-    createSkySunflower();
+    // createSkySunflower();
+    createVayolettKoala();
+    createCenterSunflowerPlant();
     createCentralMaybeth();
     createInteractiveFlowers();
 
     // 7. Event Listeners
     setupEventListeners();
-
-    // 8. Ocultar banner de ayuda después de 12 segundos
-    setTimeout(() => {
-      if (bottomBanner) {
-        bottomBanner.style.opacity = '0.5';
-      }
-    }, 12000);
 
     // Iniciar loop de animación
     animate();
@@ -273,7 +279,7 @@
 
   // --- FONDO ESTELAR AMBIENTAL ---
   function createStarfield() {
-    const starCount = 3500;
+    const starCount = 3800;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(starCount * 3);
     const colors = new Float32Array(starCount * 3);
@@ -320,14 +326,10 @@
     const outsideColor = new THREE.Color(GALAXY_PARAMS.outsideColor);
 
     for (let i = 0; i < count; i++) {
-      // Radio con distribución exponencial hacia el núcleo pero dejando espacio al disco central
       const r = 10 + Math.pow(Math.random(), power) * (radius - 10);
-
-      // Ángulo según brazo espiral y giro
       const branchAngle = ((i % branches) / branches) * Math.PI * 2;
       const spinAngle = r * spin * 0.05;
 
-      // Dispersión aleatoria
       const randomX = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * randomness * (r + 10);
       const randomY = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * randomness * (r * 0.2 + 2);
       const randomZ = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * randomness * (r + 10);
@@ -340,7 +342,6 @@
       positions[i * 3 + 1] = y;
       positions[i * 3 + 2] = z;
 
-      // Mezcla de colores dorados / cálidos
       const mixedColor = insideColor.clone();
       if (r < radius * 0.45) {
         mixedColor.lerp(midColor, (r - 10) / (radius * 0.45));
@@ -349,7 +350,6 @@
         mixedColor.lerp(outsideColor, (r - radius * 0.45) / (radius * 0.55));
       }
 
-      // Toques aleatorios de chispas brillantes
       if (Math.random() > 0.92) {
         mixedColor.addScalar(0.3);
       }
@@ -362,9 +362,7 @@
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Textura de partícula resplandeciente
     const particleTexture = textureLoader.load('assets/particle.png');
-
     const material = new THREE.PointsMaterial({
       size: GALAXY_PARAMS.size,
       sizeAttenuation: true,
@@ -395,7 +393,7 @@
     scene.add(accretionMesh);
   }
 
-  // --- GIRASOL CELESTIAL GIGANTE EN EL CIELO (COMO EN EL VIDEO) ---
+  // --- GIRASOL CELESTIAL GIGANTE EN EL CIELO ---
   function createSkySunflower() {
     const particleCount = 4200;
     const geometry = new THREE.BufferGeometry();
@@ -408,8 +406,6 @@
     const petalWidth = 6.5;
 
     let pIdx = 0;
-
-    // Partículas del centro del girasol gigante (disco denso)
     const centerParticles = 1200;
     for (let i = 0; i < centerParticles; i++) {
       const r = Math.sqrt(Math.random()) * centerRadius;
@@ -419,14 +415,12 @@
       positions[pIdx * 3 + 1] = Math.sin(angle) * r;
       positions[pIdx * 3 + 2] = (Math.random() - 0.5) * 3;
 
-      // Color cálido ámbar / dorado intenso
       colors[pIdx * 3] = 1.0;
       colors[pIdx * 3 + 1] = 0.75 + Math.random() * 0.2;
       colors[pIdx * 3 + 2] = 0.15;
       pIdx++;
     }
 
-    // Partículas de los pétalos (10 pétalos estilizados)
     const petalParticles = particleCount - centerParticles;
     const particlesPerPetal = Math.floor(petalParticles / petals);
 
@@ -436,27 +430,18 @@
       const sinA = Math.sin(petalAngle);
 
       for (let j = 0; j < particlesPerPetal; j++) {
-        // Posición a lo largo del pétalo
         const progress = Math.random();
         const dist = centerRadius + progress * petalLength;
-
-        // Ancho máximo en el medio del pétalo (forma de gota/pétalo)
         const w = Math.sin(progress * Math.PI) * petalWidth;
         const lateral = (Math.random() - 0.5) * w;
 
-        // Coordenadas locales rotadas
         const lx = dist;
         const ly = lateral;
 
-        const gx = lx * cosA - ly * sinA;
-        const gy = lx * sinA + ly * cosA;
-        const gz = (Math.random() - 0.5) * 4;
+        positions[pIdx * 3] = lx * cosA - ly * sinA;
+        positions[pIdx * 3 + 1] = lx * sinA + ly * cosA;
+        positions[pIdx * 3 + 2] = (Math.random() - 0.5) * 4;
 
-        positions[pIdx * 3] = gx;
-        positions[pIdx * 3 + 1] = gy;
-        positions[pIdx * 3 + 2] = gz;
-
-        // Color amarillo dorado brillante
         colors[pIdx * 3] = 1.0;
         colors[pIdx * 3 + 1] = 0.85 + Math.random() * 0.15;
         colors[pIdx * 3 + 2] = 0.2 + Math.random() * 0.3;
@@ -480,18 +465,78 @@
     });
 
     skySunflowerPoints = new THREE.Points(geometry, material);
-    // Posicionar alto en el cielo sobre la galaxia, mirando hacia la cámara inicial
     skySunflowerPoints.position.set(0, 68, -55);
     skySunflowerPoints.rotation.x = -0.15;
     scene.add(skySunflowerPoints);
   }
 
-  // --- NÚCLEO CENTRAL CON EL NOMBRE "MAYBETH" Y CORAZONES ---
+  // --- KOALA CELESTIAL VAYOLETT ("NUESTRA HIJITA") EN EL FONDO ---
+  function createVayolettKoala() {
+    const vayolettTex = textureLoader.load('assets/vayolett_koala.png');
+    const vayolettMat = new THREE.SpriteMaterial({
+      map: vayolettTex,
+      transparent: true,
+      depthWrite: false
+    });
+
+    vayolettSprite = new THREE.Sprite(vayolettMat);
+    // Tamaño imponente en el fondo cósmico, visible como guardiana estelar
+    vayolettSprite.scale.set(120, 151, 1);
+    vayolettSprite.position.set(0, 18, -195);
+    vayolettSprite.userData = {
+      isVayolett: true,
+      title: '★ VAYOLETT ★',
+      desc: '¡Hola mami Meycita bella! Soy Vayolett, su hijita. Desde aquí en las estrellas los cuido siempre y veo lo mucho que se aman. Papi Uli te adora con toda su alma. ¡Feliz día de las flores amarillas! 🐨💛✨',
+      svg: 'assets/vayolett_koala.png'
+    };
+
+    scene.add(vayolettSprite);
+    interactiveObjects.push(vayolettSprite);
+  }
+
+  // --- GIRASOL INTERACTIVO QUE CRECE EN EL MEDIO AL ABRIR NOTITAS ---
+  function createCenterSunflowerPlant() {
+    centerSunflowerPlant = new THREE.Group();
+
+    // 1. Tallo y hojas (Representación con sprites de alta resolución)
+    const flowerTex = textureLoader.load('assets/sunflower.svg');
+    const flowerMat = new THREE.SpriteMaterial({
+      map: flowerTex,
+      transparent: true,
+      depthWrite: false
+    });
+    const plantSprite = new THREE.Sprite(flowerMat);
+    plantSprite.scale.set(24, 30, 1);
+    plantSprite.position.set(0, 15, 0);
+    centerSunflowerPlant.add(plantSprite);
+
+    // 2. Halo de crecimiento dorado
+    const haloTex = textureLoader.load('assets/particle.png');
+    const haloMat = new THREE.SpriteMaterial({
+      map: haloTex,
+      color: 0xffd700,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      opacity: 0.7
+    });
+    const plantHalo = new THREE.Sprite(haloMat);
+    plantHalo.scale.set(32, 32, 1);
+    plantHalo.position.set(0, 15, 0);
+    centerSunflowerPlant.add(plantHalo);
+
+    // Escala inicial: brote pequeño (crecerá conforme abra notitas)
+    centerSunflowerPlant.scale.set(0.18, 0.18, 0.18);
+    centerSunflowerPlant.position.set(0, 0, 0);
+
+    scene.add(centerSunflowerPlant);
+  }
+
+  // --- NÚCLEO CENTRAL: CARTEL GIGANTE "MAYBETH" Y CORAZONES ROJOS CON ULI ---
   function createCentralMaybeth() {
     centralMaybethGroup = new THREE.Group();
 
-    // 1. Textura de Billboard MAYBETH
-    const maybethTexture = textureLoader.load('assets/sprite_maybeth.png');
+    // 1. Cartel Gigante Ultra Destacado de MAYBETH
+    const maybethTexture = textureLoader.load('assets/sprite_maybeth_giant.png');
     const spriteMat = new THREE.SpriteMaterial({
       map: maybethTexture,
       transparent: true,
@@ -501,42 +546,35 @@
     });
 
     const maybethSprite = new THREE.Sprite(spriteMat);
-    // Proporción destacada para que se lea con total claridad en el centro
-    maybethSprite.scale.set(48, 12, 1);
-    maybethSprite.position.set(0, 8.5, 0);
+    // Escala gigante visible desde cualquier ángulo
+    maybethSprite.scale.set(78, 23.4, 1);
+    maybethSprite.position.set(0, 14, 0);
     maybethSprite.userData = {
       isCenter: true,
       title: 'MAYBETH • Mi Universo Entero',
-      desc: 'Eres el centro de mi galaxia, la persona que ilumina cada rincón de mi vida y mi motivo favorito para sonreír cada día. ¡Te amo con todo mi corazón, Maybeth!',
+      desc: 'Eres el centro de mi galaxia, Meycita bella. Cada estrella, cada flor y cada pensamiento son para ti. Aunque ande a mil estudiando, te debo algo grandote. ¡Te amodoro con todo mi corazón, amorshote!',
       svg: 'assets/roses.svg'
     };
     centralMaybethGroup.add(maybethSprite);
     interactiveObjects.push(maybethSprite);
 
-    // 2. Corazones flotantes dorados que orbitan alrededor de MAYBETH
-    const heartCount = 6;
-    for (let i = 0; i < heartCount; i++) {
-      const heartCanvas = document.createElement('canvas');
-      heartCanvas.width = 128;
-      heartCanvas.height = 128;
-      const ctx = heartCanvas.getContext('2d');
-      ctx.font = '72px Arial';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.shadowColor = '#ffd700';
-      ctx.shadowBlur = 15;
-      ctx.fillStyle = i % 2 === 0 ? '#ffd700' : '#ffca28';
-      ctx.fillText('💛', 64, 64);
+    // 2. Corazones Rojitos con el nombre de "Uli" orbitando en 3D
+    const heartUliTex = textureLoader.load('assets/sprite_heart_uli.png');
+    const heartCount = 8;
 
-      const hTexture = new THREE.CanvasTexture(heartCanvas);
-      const hMat = new THREE.SpriteMaterial({ map: hTexture, transparent: true });
+    for (let i = 0; i < heartCount; i++) {
+      const hMat = new THREE.SpriteMaterial({
+        map: heartUliTex,
+        transparent: true,
+        depthWrite: false
+      });
       const hSprite = new THREE.Sprite(hMat);
-      hSprite.scale.set(5.5, 5.5, 1);
+      hSprite.scale.set(6.8, 6.8, 1);
       hSprite.userData = {
         orbitAngle: (i / heartCount) * Math.PI * 2,
-        orbitRadius: 20 + (i % 3) * 3,
-        orbitSpeed: 0.8 + (i * 0.1),
-        yOffset: (i % 2 === 0 ? 6 : 10)
+        orbitRadius: 26 + (i % 3) * 4,
+        orbitSpeed: 0.75 + (i * 0.08),
+        yOffset: 14 + (i % 2 === 0 ? -4 : 4)
       };
       centralMaybethGroup.add(hSprite);
     }
@@ -551,7 +589,6 @@
     FLOWERS_DATA.forEach((flowerData) => {
       const flowerSubGroup = new THREE.Group();
 
-      // Coordenadas basadas en ángulo y radio
       const x = Math.cos(flowerData.angle) * flowerData.radius;
       const z = Math.sin(flowerData.angle) * flowerData.radius;
       const y = flowerData.height;
@@ -573,12 +610,10 @@
       });
       const flowerSprite = new THREE.Sprite(flowerSpriteMat);
 
-      // Escala de la flor
       const scaleVal = flowerData.type === 'bouquet' ? 14 : (flowerData.type === 'roses' ? 13 : 11);
       flowerSprite.scale.set(scaleVal, scaleVal, 1);
       flowerSprite.position.set(0, scaleVal * 0.35, 0);
 
-      // Metadatos para interacción
       flowerSprite.userData = {
         isFlower: true,
         parentGroup: flowerSubGroup,
@@ -589,7 +624,7 @@
       flowerSubGroup.add(flowerSprite);
       interactiveObjects.push(flowerSprite);
 
-      // 2. Halo de Luz / Anillo brillante bajo la flor
+      // 2. Halo de Luz bajo la flor
       const haloCanvas = document.createElement('canvas');
       haloCanvas.width = 128;
       haloCanvas.height = 128;
@@ -635,12 +670,10 @@
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    // Fondo / Contorno oscuro para legibilidad perfecta contra estrellas
     ctx.strokeStyle = 'rgba(5, 2, 10, 0.88)';
     ctx.lineWidth = 7;
     ctx.strokeText(text, 256, 64);
 
-    // Resplandor dorado
     ctx.shadowColor = 'rgba(255, 215, 0, 0.95)';
     ctx.shadowBlur = 18;
     ctx.fillStyle = '#fffde7';
@@ -661,23 +694,16 @@
     return sprite;
   }
 
-  // --- MANEJO DE EVENTOS (MOUSE, TOUCH, MODAL, AUDIO) ---
+  // --- GESTIÓN DE EVENTOS ---
   function setupEventListeners() {
-    // 1. Clic en pantalla inicial "Toca para iniciar"
     introScreen.addEventListener('click', startExperience);
     introScreen.addEventListener('touchstart', startExperience, { passive: true });
 
-    // 2. Redimensionamiento de ventana
     window.addEventListener('resize', onWindowResize);
-
-    // 3. Hover (Raycasting)
     window.addEventListener('mousemove', onMouseMove);
-
-    // 4. Clic en flores
     window.addEventListener('click', onFlowerClick);
     window.addEventListener('touchend', onTouchEnd);
 
-    // 5. Botón de cerrar modal
     modalCloseBtn.addEventListener('click', closeModal);
     flowerModal.addEventListener('click', (e) => {
       if (e.target === flowerModal) closeModal();
@@ -686,28 +712,27 @@
       if (e.key === 'Escape') closeModal();
     });
 
-    // 6. Botón de Música
     btnAudio.addEventListener('click', toggleAudio);
-
-    // 7. Botón de restablecer cámara
     btnResetCam.addEventListener('click', resetCameraView);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('autostart') === '1') {
+      setTimeout(startExperience, 200);
+    }
   }
 
-  // --- INICIAR EXPERIENCIA CON EXPLOSIÓN DE FLORES ---
+  // --- INICIAR EXPERIENCIA ---
   function startExperience() {
     if (isStarted) return;
     isStarted = true;
 
-    // Reproducir música
     playAudio();
 
-    // Transición visual: desvanecer pantalla de intro
     introScreen.classList.add('fade-out');
     setTimeout(() => {
       if (introScreen) introScreen.style.display = 'none';
     }, 1200);
 
-    // Animación de cámara inicial: entrada elegante
     const startY = 160;
     const targetY = 95;
     const startZ = 240;
@@ -718,7 +743,6 @@
     function flyIn(now) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Easing cúbico out
       const ease = 1 - Math.pow(1 - progress, 3);
 
       camera.position.y = startY - (startY - targetY) * ease;
@@ -766,7 +790,7 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
-  // --- DETECCIÓN DE HOVER (RAYCASTING) ---
+  // --- DETECCIÓN DE HOVER ---
   function onMouseMove(event) {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -779,7 +803,6 @@
       document.body.style.cursor = 'pointer';
 
       if (hoveredObject !== hitObj) {
-        // Restaurar anterior si existía
         if (hoveredObject && hoveredObject.userData.baseScale) {
           hoveredObject.scale.set(
             hoveredObject.userData.baseScale,
@@ -788,7 +811,6 @@
           );
         }
         hoveredObject = hitObj;
-        // Efecto hover: agrandar suavemente
         if (hitObj.userData.baseScale) {
           hitObj.scale.set(
             hitObj.userData.baseScale * 1.25,
@@ -810,9 +832,8 @@
     }
   }
 
-  // --- CLIC EN FLOR (ABRIR MODAL) ---
+  // --- CLIC EN OBJETOS (FLORES, MAYBETH, VAYOLETT) ---
   function onFlowerClick(event) {
-    // Ignorar clic si ocurrió dentro de controles de la UI
     if (event.target.closest('#ui-overlay') || event.target.closest('#flower-modal')) return;
 
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -823,19 +844,10 @@
 
     if (intersects.length > 0) {
       const selected = intersects[0].object;
-      if (selected.userData.isFlower) {
-        openModal(selected.userData.data);
-      } else if (selected.userData.isCenter) {
-        openModal({
-          title: selected.userData.title,
-          desc: selected.userData.desc,
-          svg: selected.userData.svg
-        });
-      }
+      handleObjectClick(selected);
     }
   }
 
-  let touchStartTime = 0;
   function onTouchEnd(event) {
     if (event.touches.length > 0) return;
     if (event.target.closest('#ui-overlay') || event.target.closest('#flower-modal')) return;
@@ -849,16 +861,116 @@
 
     if (intersects.length > 0) {
       const selected = intersects[0].object;
-      if (selected.userData.isFlower) {
-        openModal(selected.userData.data);
-      } else if (selected.userData.isCenter) {
-        openModal({
-          title: selected.userData.title,
-          desc: selected.userData.desc,
-          svg: selected.userData.svg
-        });
+      handleObjectClick(selected);
+    }
+  }
+
+  function handleObjectClick(selected) {
+    if (selected.userData.isFlower) {
+      const flower = selected.userData.data;
+      openModal(flower);
+
+      // Registrar progreso de crecimiento del girasol
+      if (!openedNotes.has(flower.id)) {
+        openedNotes.add(flower.id);
+        updateSunflowerGrowth();
+      }
+    } else if (selected.userData.isCenter) {
+      openModal({
+        title: selected.userData.title,
+        desc: selected.userData.desc,
+        svg: selected.userData.svg
+      });
+    } else if (selected.userData.isVayolett) {
+      openModal({
+        title: selected.userData.title,
+        desc: selected.userData.desc,
+        svg: selected.userData.svg
+      });
+    }
+  }
+
+  // --- ACTUALIZAR CRECIMIENTO DEL GIRASOL EN EL CENTRO ---
+  function updateSunflowerGrowth() {
+    const count = openedNotes.size;
+    if (openedCountElem) {
+      openedCountElem.textContent = count;
+    }
+
+    // Progreso de 0 a 1
+    sunflowerGrowthProgress = count / 12.0;
+
+    // Si abrió todas las 12 notitas: ¡GRAN FINAL!
+    if (count === 12 && !hasTriggeredFinale) {
+      hasTriggeredFinale = true;
+      setTimeout(triggerGrandFinale, 600);
+    }
+  }
+
+  // --- GRAN FINAL CUANDO ABRE TODAS LAS NOTITAS ---
+  function triggerGrandFinale() {
+    // 1. Crear explosión de fuegos estelares dorados en el centro
+    const burstCount = 1500;
+    const bGeo = new THREE.BufferGeometry();
+    const bPos = new Float32Array(burstCount * 3);
+    const bVel = new Float32Array(burstCount * 3);
+
+    for (let i = 0; i < burstCount; i++) {
+      bPos[i * 3] = 0;
+      bPos[i * 3 + 1] = 15;
+      bPos[i * 3 + 2] = 0;
+
+      const speed = 25 + Math.random() * 45;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.random() * Math.PI;
+
+      bVel[i * 3] = Math.sin(phi) * Math.cos(theta) * speed;
+      bVel[i * 3 + 1] = Math.cos(phi) * speed + 10;
+      bVel[i * 3 + 2] = Math.sin(phi) * Math.sin(theta) * speed;
+    }
+
+    bGeo.setAttribute('position', new THREE.BufferAttribute(bPos, 3));
+    const pTex = textureLoader.load('assets/particle.png');
+    const bMat = new THREE.PointsMaterial({
+      size: 3.5,
+      map: pTex,
+      color: 0xffd700,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    finaleBurstPoints = new THREE.Points(bGeo, bMat);
+    scene.add(finaleBurstPoints);
+
+    // 2. Animar partículas del estallido
+    let burstStart = performance.now();
+    function animateBurst(now) {
+      const elapsed = (now - burstStart) / 1000.0;
+      const pos = bGeo.attributes.position.array;
+      for (let i = 0; i < burstCount; i++) {
+        pos[i * 3] += bVel[i * 3] * 0.016;
+        pos[i * 3 + 1] += bVel[i * 3 + 1] * 0.016 - 0.2; // gravedad
+        pos[i * 3 + 2] += bVel[i * 3 + 2] * 0.016;
+      }
+      bGeo.attributes.position.needsUpdate = true;
+      bMat.opacity = Math.max(0, 1 - elapsed / 3.0);
+
+      if (elapsed < 3.5) {
+        requestAnimationFrame(animateBurst);
+      } else {
+        scene.remove(finaleBurstPoints);
       }
     }
+    requestAnimationFrame(animateBurst);
+
+    // 3. Abrir la tarjeta final de celebración
+    setTimeout(() => {
+      openModal({
+        title: '¡FLORECIÓ TU GIRASOL GIGANTE, MEYCITA BELLA! 🌻',
+        desc: '¡Has descubierto todas las notitas de nuestra galaxia! Tu amor y dulzura hicieron florecer el girasol más hermoso del cosmos. Maybeth, eres muy especial para mí. Aunque ande a mil estudiando y desvelándome, todo mi esfuerzo es pensando en nuestro futuro. ¡Te debo algo muchote grandote! Te amodoro con toda mi alma, mi amorshote. ❤️🌻 — Tu Uli',
+        svg: 'assets/sunflower.svg'
+      });
+    }, 1200);
   }
 
   // --- ABRIR Y CERRAR MODAL ---
@@ -918,42 +1030,62 @@
 
     // 3. Animación de respiración / brillo del girasol gigante en el cielo
     if (skySunflowerPoints) {
-      const pos = skySunflowerPoints.geometry.attributes.position;
       skySunflowerPoints.rotation.z = Math.sin(elapsedTime * 0.4) * 0.03;
       skySunflowerPoints.position.y = 68 + Math.sin(elapsedTime * 0.8) * 1.5;
     }
 
-    // 4. Animación del núcleo central "MAYBETH" y sus corazones
+    // 4. Animación del Koala Celestial VAYOLETT
+    if (vayolettSprite) {
+      vayolettSprite.position.y = 18 + Math.sin(elapsedTime * 0.7) * 2.5;
+      // Suave respiración
+      const breath = 1.0 + Math.sin(elapsedTime * 1.1) * 0.025;
+      vayolettSprite.scale.set(120 * breath, 151 * breath, 1);
+    }
+
+    // 5. Crecimiento dinámico del girasol central
+    if (centerSunflowerPlant) {
+      // Escala objetivo basada en las notas abiertas:
+      // Si 0 notas: escala 0.22
+      // Si 12 notas: escala 2.8 (¡Girasol gigante!)
+      const targetScale = hasTriggeredFinale ? 2.8 : (0.22 + sunflowerGrowthProgress * 1.8);
+      centerSunflowerPlant.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.05);
+
+      // Oscilación suave
+      centerSunflowerPlant.rotation.y = Math.sin(elapsedTime * 0.5) * 0.1;
+      centerSunflowerPlant.position.y = Math.sin(elapsedTime * 1.5) * 0.8;
+    }
+
+    // 6. Animación del núcleo central "MAYBETH" y los corazones con "Uli"
     if (centralMaybethGroup) {
-      // Pulso suave del texto MAYBETH
       const maybethSprite = centralMaybethGroup.children[0];
       if (maybethSprite) {
-        const pulse = 1.0 + Math.sin(elapsedTime * 2.5) * 0.05;
-        maybethSprite.scale.set(38 * pulse, 9.5 * pulse, 1);
+        // Pulso suave del letrero gigante MAYBETH
+        const pulse = 1.0 + Math.sin(elapsedTime * 2.2) * 0.035;
+        maybethSprite.scale.set(78 * pulse, 23.4 * pulse, 1);
       }
 
-      // Orbitar corazones alrededor de MAYBETH
+      // Orbitar los 8 corazones rojos de "Uli" en 3D
       for (let i = 1; i < centralMaybethGroup.children.length; i++) {
         const h = centralMaybethGroup.children[i];
         if (h.userData.orbitAngle !== undefined) {
-          const angle = h.userData.orbitAngle + elapsedTime * h.userData.orbitSpeed * 0.4;
+          const angle = h.userData.orbitAngle + elapsedTime * h.userData.orbitSpeed * 0.45;
           h.position.x = Math.cos(angle) * h.userData.orbitRadius;
           h.position.z = Math.sin(angle) * h.userData.orbitRadius;
-          h.position.y = h.userData.yOffset + Math.sin(elapsedTime * 2 + i) * 1.2;
+          h.position.y = h.userData.yOffset + Math.sin(elapsedTime * 2.5 + i) * 1.6;
         }
       }
     }
 
-    // 5. Flotación oscilante (bobbing) de cada flor y su frase
+    // 7. Flotación oscilante (bobbing) de cada flor y su frase
     flowersGroup.children.forEach((fGroup) => {
       const u = fGroup.userData;
       fGroup.position.y = u.baseY + Math.sin(elapsedTime * u.bobSpeed + u.bobOffset) * 1.4;
     });
 
-    // 6. Actualizar Controles Orbitales
+    // 8. Actualizar Controles Orbitales
     controls.update();
 
-    // 7. Renderizar
+    // 9. Renderizar
     renderer.render(scene, camera);
   }
 

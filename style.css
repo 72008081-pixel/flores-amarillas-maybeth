@@ -181,6 +181,27 @@ html, body {
   text-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
 }
 
+.growth-pill {
+  background: rgba(40, 20, 5, 0.85);
+  border: 1.5px solid #ffd700;
+  color: #fff9c4;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
+  animation: pulse-growth 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-growth {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+  50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+}
+
 .controls-group {
   display: flex;
   align-items: center;
@@ -241,19 +262,31 @@ html, body {
 /* Bottom Instruction Banner */
 .bottom-banner {
   align-self: center;
-  background: rgba(18, 10, 28, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 215, 0, 0.25);
+  background: rgba(18, 10, 28, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 215, 0, 0.3);
   padding: 10px 24px;
-  border-radius: 30px;
+  border-radius: 20px;
   color: #fff9c4;
-  font-size: clamp(0.75rem, 2vw, 0.9rem);
-  letter-spacing: 1px;
+  font-size: clamp(0.75rem, 2vw, 0.88rem);
+  letter-spacing: 0.5px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   pointer-events: auto;
   transition: opacity 0.8s;
-  animation: float-banner 4s ease-in-out infinite;
+  max-width: 92vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.apology-note {
+  font-size: clamp(0.66rem, 1.6vw, 0.75rem);
+  color: #ffe0b2;
+  opacity: 0.9;
+  line-height: 1.35;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
 }
 
 /* ==========================================================================
