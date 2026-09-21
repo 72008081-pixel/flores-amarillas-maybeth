@@ -2,11 +2,12 @@
  * ==========================================================================
  * FLORES AMARILLAS PARA MAYBETH - 3D INTERACTIVE GALAXY & FLOWERS
  * Personalizado especialmente para Maybeth con:
- * - Koala Celestial Vayolett
- * - Corazones rojos con Uli
+ * - Modelo 100% 3D del Koala Celestial Vayolett ("Nuestra Hijita")
+ * - Girasol 3D Procedural con tallo, hojas y 36 pétalos reales (Cero cajas negras)
+ * - Viaje a la Velocidad de la Luz (4s de hiperespacio con flores a toda velocidad)
+ * - Corazones rojos con Uli orbitando en 3D
  * - Letrero gigante destacado de MAYBETH
- * - Girasol interactivo en crecimiento al abrir cada notita
- * - Apodos cariñosos: Amorshote, Mi vidita, Te amodoro, Meycita bella
+ * - Apodos cariñosos: Amorshote, Mi vidita, Te amodoro, Meycita bella, Tu Uli
  * ==========================================================================
  */
 
@@ -58,97 +59,97 @@
       type: 'roses',
       sprite: 'assets/sprite_roses.png',
       svg: 'assets/roses.svg',
-      angle: 2.2,
-      radius: 52,
-      height: 5
+      angle: 2.1,
+      radius: 54,
+      height: -5
     },
     {
       id: 'flor-4',
-      title: 'Hoy pienso en ti',
-      desc: 'Hoy, como todos los días y cada segundo, estás presente en cada uno de mis pensamientos, amorshote. Cada recuerdo contigo es una sonrisa boba que no puedo evitar.',
-      type: 'daisy',
-      sprite: 'assets/sprite_daisy.png',
-      svg: 'assets/daisy.svg',
-      angle: 3.1,
+      title: 'El amarillo te queda bien',
+      desc: 'Como las flores de septiembre, irradias una alegría única que contagia a cualquiera que te mire. Verte sonreír me alegra el día entero, amorshote. ¡Gracias por existir!',
+      type: 'sunflower',
+      sprite: 'assets/sprite_sunflower.png',
+      svg: 'assets/sunflower.svg',
+      angle: 2.9,
       radius: 78,
       height: 7
     },
     {
       id: 'flor-5',
-      title: 'Gracias por existir',
-      desc: 'El universo es inmenso y tiene miles de millones de estrellas, pero mi mayor bendición y fortuna es tenerte a ti en este mundo, mi vidita. Gracias por existir y llenar mi vida de luz.',
-      type: 'bouquet',
-      sprite: 'assets/sprite_bouquet.png',
-      svg: 'assets/bouquet.svg',
-      angle: 4.0,
-      radius: 46,
-      height: 3
+      title: 'Septiembre y siempre',
+      desc: 'No solo en esta fecha te mereces flores amarillas... te mereces flores, abrazos y detalles todos los días del año, mi vidita. Eres mi prioridad y mi personita favorita en el universo.',
+      type: 'daisy',
+      sprite: 'assets/sprite_daisy.png',
+      svg: 'assets/daisy.svg',
+      angle: 3.7,
+      radius: 60,
+      height: -4
     },
     {
       id: 'flor-6',
-      title: 'Mi lugar favorito',
-      desc: 'Mi lugar favorito en el mundo no es ninguna ciudad lejana ni un paisaje exótico... es simplemente estar abrazado a ti, Meycita bella, escuchando tu risa y sintiendo tu paz.',
-      type: 'sunflower',
-      sprite: 'assets/sprite_sunflower.png',
-      svg: 'assets/sunflower.svg',
-      angle: 4.9,
-      radius: 70,
+      title: 'Hoy pienso en ti',
+      desc: 'Y la verdad es que pienso en ti casi todo el tiempo, Meycita bella. Cuando estudio, cuando camino y antes de dormir. Cada instante pienso en lo afortunado que soy de tenerte a mi lado.',
+      type: 'bouquet',
+      sprite: 'assets/sprite_bouquet.png',
+      svg: 'assets/bouquet.svg',
+      angle: 4.4,
+      radius: 88,
       height: 5
     },
     {
       id: 'flor-7',
-      title: 'Un girasol para ti',
-      desc: 'Si pudiera regalarte un girasol por cada motivo que me das para sonreír y ser feliz, mi amorshote, tendrías un universo entero de flores solo para ti. ¡Te amodoro tanto!',
-      type: 'daisy',
-      sprite: 'assets/sprite_daisy.png',
-      svg: 'assets/daisy.svg',
-      angle: 5.7,
-      radius: 58,
-      height: 6
-    },
-    {
-      id: 'flor-8',
-      title: 'Septiembre siempre',
-      desc: 'Que este 21 de septiembre quede grabado en tu corazoncito. Aunque ande a mil estudiando, mi amor por ti florece con más fuerza cada día, mi vidita hermosa.',
+      title: 'Mi rincón de calma',
+      desc: 'En este mundo caótico y lleno de prisas, hablar contigo es mi momento de paz, amorshote. Tu voz me tranquiliza el corazón como nada más puede hacerlo.',
       type: 'roses',
       sprite: 'assets/sprite_roses.png',
       svg: 'assets/roses.svg',
-      angle: 0.8,
-      radius: 88,
+      angle: 5.1,
+      radius: 72,
+      height: -6
+    },
+    {
+      id: 'flor-8',
+      title: 'Cada pequeño detalle',
+      desc: 'Amo tus manías, tus risas, tus ocurrencias y esa carita hermosa que tienes, mi vidita. Cada detalle tuyo me vuelve a enamorar todos los días.',
+      type: 'sunflower',
+      sprite: 'assets/sprite_sunflower.png',
+      svg: 'assets/sunflower.svg',
+      angle: 5.9,
+      radius: 94,
       height: 8
     },
     {
       id: 'flor-9',
-      title: 'El amarillo te queda bien',
-      desc: 'Dicen que el amarillo es el color de la alegría y los nuevos comienzos, pero a mí simplemente me recuerda a tu luz tan única. ¡El amarillo te queda hermoso, Meycita bella!',
-      type: 'sunflower',
-      sprite: 'assets/sprite_sunflower.png',
-      svg: 'assets/sunflower.svg',
-      angle: 1.9,
-      radius: 95,
-      height: 7
+      title: 'Construyendo juntos',
+      desc: 'No prometo que todo será fácil ni perfecto, pero sí prometo dar lo mejor de mí para que construyamos algo bonito y duradero, Meycita bella. Te amodoro con todo el corazón.',
+      type: 'daisy',
+      sprite: 'assets/sprite_daisy.png',
+      svg: 'assets/daisy.svg',
+      angle: 0.8,
+      radius: 98,
+      height: -7
     },
     {
       id: 'flor-10',
-      title: 'Gracias por tanto',
-      desc: 'Gracias por tu ternura, por tu comprensión, por hacerme reír y por hacerme sentir el hombre más afortunado de todo el mundo, mi amorshote adorado.',
+      title: 'Mi casualidad favorita',
+      desc: 'De todas las personas en este planeta, coincidir contigo ha sido el regalo más hermoso que la vida me ha dado, amorshote. Eres mi destino elegido.',
       type: 'bouquet',
       sprite: 'assets/sprite_bouquet.png',
       svg: 'assets/bouquet.svg',
-      angle: 3.6,
-      radius: 92,
-      height: 6
+      angle: 2.5,
+      radius: 104,
+      height: 9
     },
     {
       id: 'flor-11',
-      title: 'Contigo siempre',
-      desc: 'En cada paso, en cada sueño y en cada camino que elijamos recorrer, quiero ir de tu mano. Mi mayor deseo es cuidarte y verte feliz siempre, mi vidita.',
+      title: 'Siempre tú',
+      desc: 'Si tuviera que elegirte un millón de veces más, te elegiría sin dudar un solo segundo, mi vidita hermosa. Te amodoro con cada pedacito de mi alma.',
       type: 'roses',
       sprite: 'assets/sprite_roses.png',
       svg: 'assets/roses.svg',
-      angle: 4.5,
+      angle: 3.9,
       radius: 104,
-      height: 9
+      height: -8
     },
     {
       id: 'flor-12',
@@ -165,8 +166,9 @@
 
   // --- VARIABLES DE THREE.JS ---
   let scene, camera, renderer, controls;
-  let galaxyPoints, skySunflowerPoints, accretionMesh, centralMaybethGroup;
-  let vayolettSprite, centerSunflowerPlant, finaleBurstPoints;
+  let universeGroup = new THREE.Group();
+  let galaxyPoints, accretionMesh, centralMaybethGroup;
+  let vayolett3DGroup, centerSunflower3D, finaleBurstPoints;
   let flowersGroup = new THREE.Group();
   let interactiveObjects = [];
   let raycaster = new THREE.Raycaster();
@@ -174,12 +176,21 @@
   let hoveredObject = null;
   let clock = new THREE.Clock();
   let isStarted = false;
+  let isWarping = false;
   let textureLoader = new THREE.TextureLoader();
 
   // Sistema de progreso del girasol
   const openedNotes = new Set();
   let sunflowerGrowthProgress = 0;
   let hasTriggeredFinale = false;
+
+  // Warp system variables
+  let warpGroup = null;
+  let warpStarsMesh = null;
+  let warpFlowers = [];
+  let warpRings = [];
+  let warpStartTime = 0;
+  const WARP_DURATION = 4000; // 4.0 segundos a la velocidad de la luz
 
   // Elementos DOM
   const introScreen = document.getElementById('intro-screen');
@@ -193,7 +204,6 @@
   const musicBars = document.getElementById('music-bars');
   const audioStatusText = document.getElementById('audio-status-text');
   const btnResetCam = document.getElementById('btn-reset-cam');
-  const bottomBanner = document.getElementById('bottom-banner');
   const openedCountElem = document.getElementById('opened-count');
 
   // --- INICIALIZACIÓN PRINCIPAL ---
@@ -202,7 +212,9 @@
 
     // 1. Escena y Niebla
     scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x030206, 0.0016);
+    scene.fog = new THREE.FogExp2(0x040208, 0.0014);
+
+    scene.add(universeGroup);
 
     // 2. Cámara
     const aspect = window.innerWidth / window.innerHeight;
@@ -221,7 +233,7 @@
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.06;
-    controls.autoRotate = true;
+    controls.autoRotate = false;
     controls.autoRotateSpeed = 0.5;
     controls.maxDistance = 450;
     controls.minDistance = 35;
@@ -233,30 +245,34 @@
       clearTimeout(autoRotateTimeout);
     });
     controls.addEventListener('end', () => {
-      clearTimeout(autoRotateTimeout);
-      autoRotateTimeout = setTimeout(() => {
-        controls.autoRotate = true;
-      }, 3500);
+      if (!isWarping && isStarted) {
+        clearTimeout(autoRotateTimeout);
+        autoRotateTimeout = setTimeout(() => {
+          controls.autoRotate = true;
+        }, 3500);
+      }
     });
 
-    // 5. Luces ambientales suaves
-    const ambientLight = new THREE.AmbientLight(0xfff8e1, 1.3);
+    // 5. Iluminación
+    const ambientLight = new THREE.AmbientLight(0xfff6ea, 1.4);
     scene.add(ambientLight);
 
-    const centerPointLight = new THREE.PointLight(0xffd700, 3.5, 250);
-    centerPointLight.position.set(0, 8, 0);
-    scene.add(centerPointLight);
+    const centerPointLight = new THREE.PointLight(0xffd700, 3.8, 260);
+    centerPointLight.position.set(0, 12, 0);
+    universeGroup.add(centerPointLight);
 
-    // 6. Construir componentes del universo
+    // 6. Construir componentes del universo dentro de universeGroup
     createStarfield();
     createSpiralGalaxy();
-    // createSkySunflower();
-    createVayolettKoala();
-    createCenterSunflowerPlant();
+    createVayolett3D();
+    createCenterSunflower3D();
     createCentralMaybeth();
     createInteractiveFlowers();
 
-    // 7. Event Listeners
+    // 7. Pre-construir motor de hiperespacio
+    createHyperspaceEngine();
+
+    // 8. Event Listeners
     setupEventListeners();
 
     // Iniciar loop de animación
@@ -266,11 +282,29 @@
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('autostart') === '1') {
       if (introScreen) introScreen.style.display = 'none';
+      camera.position.set(0, 95, 155);
+      controls.target.set(0, 0, 0);
+      controls.autoRotate = true;
+      isStarted = true;
+    }
+    if (urlParams.get('warp') === '1') {
       startExperience();
+    }
+    if (urlParams.get('bloom') === '1') {
+      if (introScreen) introScreen.style.display = 'none';
+      camera.position.set(0, 95, 155);
+      controls.target.set(0, 0, 0);
+      controls.autoRotate = true;
+      isStarted = true;
+      for (let i = 1; i <= 12; i++) openedNotes.add('flor-' + i);
+      updateSunflowerGrowth();
     }
     if (urlParams.get('modal') === '1') {
       if (introScreen) introScreen.style.display = 'none';
-      startExperience();
+      camera.position.set(0, 95, 155);
+      controls.target.set(0, 0, 0);
+      controls.autoRotate = true;
+      isStarted = true;
       setTimeout(() => {
         openModal(FLOWERS_DATA[0]);
       }, 300);
@@ -279,256 +313,550 @@
 
   // --- FONDO ESTELAR AMBIENTAL ---
   function createStarfield() {
-    const starCount = 3800;
+    const starCount = 6000;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(starCount * 3);
     const colors = new Float32Array(starCount * 3);
 
     for (let i = 0; i < starCount; i++) {
-      const radius = 600 + Math.random() * 600;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(Math.random() * 2 - 1);
+      positions[i * 3] = (Math.random() - 0.5) * 1400;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 1400;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 1400;
 
-      positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
-      positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-      positions[i * 3 + 2] = radius * Math.cos(phi);
-
-      const isGold = Math.random() > 0.4;
-      colors[i * 3] = isGold ? 1.0 : 0.9;
-      colors[i * 3 + 1] = isGold ? 0.85 + Math.random() * 0.15 : 0.95;
-      colors[i * 3 + 2] = isGold ? 0.4 + Math.random() * 0.4 : 1.0;
+      const shade = 0.6 + Math.random() * 0.4;
+      if (Math.random() > 0.4) {
+        colors[i * 3] = shade;
+        colors[i * 3 + 1] = shade * 0.9;
+        colors[i * 3 + 2] = shade * 0.4;
+      } else {
+        colors[i * 3] = shade * 0.85;
+        colors[i * 3 + 1] = shade * 0.85;
+        colors[i * 3 + 2] = shade;
+      }
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
+    const pTex = textureLoader.load('assets/particle.png');
     const material = new THREE.PointsMaterial({
-      size: 1.8,
+      size: 2.2,
+      sizeAttenuation: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
       vertexColors: true,
+      map: pTex,
       transparent: true,
-      opacity: 0.8,
-      sizeAttenuation: true
+      opacity: 0.85
     });
 
-    const stars = new THREE.Points(geometry, material);
-    scene.add(stars);
+    const starfield = new THREE.Points(geometry, material);
+    scene.add(starfield);
   }
 
   // --- GALAXIA ESPIRAL DORADA DE FLORES AMARILLAS ---
   function createSpiralGalaxy() {
-    const { count, radius, branches, spin, randomness, power } = GALAXY_PARAMS;
     const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
+    const positions = new Float32Array(GALAXY_PARAMS.count * 3);
+    const colors = new Float32Array(GALAXY_PARAMS.count * 3);
 
-    const insideColor = new THREE.Color(GALAXY_PARAMS.insideColor);
-    const midColor = new THREE.Color(GALAXY_PARAMS.midColor);
-    const outsideColor = new THREE.Color(GALAXY_PARAMS.outsideColor);
+    const colorInside = new THREE.Color(GALAXY_PARAMS.insideColor);
+    const colorMid = new THREE.Color(GALAXY_PARAMS.midColor);
+    const colorOutside = new THREE.Color(GALAXY_PARAMS.outsideColor);
 
-    for (let i = 0; i < count; i++) {
-      const r = 10 + Math.pow(Math.random(), power) * (radius - 10);
-      const branchAngle = ((i % branches) / branches) * Math.PI * 2;
-      const spinAngle = r * spin * 0.05;
+    for (let i = 0; i < GALAXY_PARAMS.count; i++) {
+      const i3 = i * 3;
+      const radius = Math.pow(Math.random(), GALAXY_PARAMS.power) * GALAXY_PARAMS.radius;
+      const spinAngle = radius * GALAXY_PARAMS.spin;
+      const branchAngle = ((i % GALAXY_PARAMS.branches) / GALAXY_PARAMS.branches) * Math.PI * 2;
 
-      const randomX = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * randomness * (r + 10);
-      const randomY = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * randomness * (r * 0.2 + 2);
-      const randomZ = Math.pow(Math.random(), 2) * (Math.random() < 0.5 ? 1 : -1) * randomness * (r + 10);
+      const randomX = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * GALAXY_PARAMS.randomness * radius;
+      const randomY = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * GALAXY_PARAMS.randomness * (radius * 0.45);
+      const randomZ = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * GALAXY_PARAMS.randomness * radius;
 
-      const x = Math.cos(branchAngle + spinAngle) * r + randomX;
-      const y = randomY;
-      const z = Math.sin(branchAngle + spinAngle) * r + randomZ;
+      positions[i3] = Math.cos(branchAngle + spinAngle) * radius + randomX;
+      positions[i3 + 1] = randomY;
+      positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ;
 
-      positions[i * 3] = x;
-      positions[i * 3 + 1] = y;
-      positions[i * 3 + 2] = z;
-
-      const mixedColor = insideColor.clone();
-      if (r < radius * 0.45) {
-        mixedColor.lerp(midColor, (r - 10) / (radius * 0.45));
+      const mixedColor = colorInside.clone();
+      const normR = radius / GALAXY_PARAMS.radius;
+      if (normR < 0.35) {
+        mixedColor.lerp(colorMid, normR / 0.35);
       } else {
-        mixedColor.lerp(midColor, 0.7);
-        mixedColor.lerp(outsideColor, (r - radius * 0.45) / (radius * 0.55));
+        mixedColor.lerp(colorMid, 1.0);
+        mixedColor.lerp(colorOutside, (normR - 0.35) / 0.65);
       }
 
-      if (Math.random() > 0.92) {
-        mixedColor.addScalar(0.3);
-      }
-
-      colors[i * 3] = mixedColor.r;
-      colors[i * 3 + 1] = mixedColor.g;
-      colors[i * 3 + 2] = mixedColor.b;
+      colors[i3] = mixedColor.r;
+      colors[i3 + 1] = mixedColor.g;
+      colors[i3 + 2] = mixedColor.b;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    const particleTexture = textureLoader.load('assets/particle.png');
+    const pTex = textureLoader.load('assets/particle.png');
     const material = new THREE.PointsMaterial({
       size: GALAXY_PARAMS.size,
       sizeAttenuation: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
       vertexColors: true,
-      map: particleTexture,
+      map: pTex,
       transparent: true,
       opacity: 0.92
     });
 
     galaxyPoints = new THREE.Points(geometry, material);
-    scene.add(galaxyPoints);
+    universeGroup.add(galaxyPoints);
 
-    // Disco de acreción en el centro con agujero negro
-    const accTexture = textureLoader.load('assets/sprite_accretion.png');
-    const accGeo = new THREE.PlaneGeometry(42, 42);
+    // Disco de acreción del agujero negro central
+    const accTex = textureLoader.load('assets/sprite_accretion.png');
     const accMat = new THREE.MeshBasicMaterial({
-      map: accTexture,
+      map: accTex,
       transparent: true,
-      opacity: 0.92,
+      blending: THREE.AdditiveBlending,
       side: THREE.DoubleSide,
       depthWrite: false
     });
+    const accGeo = new THREE.PlaneGeometry(38, 38);
     accretionMesh = new THREE.Mesh(accGeo, accMat);
     accretionMesh.rotation.x = Math.PI / 2;
-    accretionMesh.position.y = 0;
-    scene.add(accretionMesh);
+    accretionMesh.position.set(0, 0.2, 0);
+    universeGroup.add(accretionMesh);
   }
 
-  // --- GIRASOL CELESTIAL GIGANTE EN EL CIELO ---
-  function createSkySunflower() {
-    const particleCount = 4200;
-    const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
-    const colors = new Float32Array(particleCount * 3);
+  // --- MODELO 100% 3D DE VAYOLETT ("NUESTRA HIJITA") ---
+  function createVayolett3D() {
+    vayolett3DGroup = new THREE.Group();
+    // Posición perfecta: y = -22, z = -135 (debajo del letrero superior y justo sobre el núcleo de la galaxia)
+    vayolett3DGroup.position.set(0, -22, -135);
+    vayolett3DGroup.scale.set(1.05, 1.05, 1.05);
 
-    const petals = 10;
-    const centerRadius = 8;
-    const petalLength = 26;
-    const petalWidth = 6.5;
+    // Luz dedicada para iluminar su cuerpecito de peluche 3D
+    const plushLight = new THREE.PointLight(0xfff8ed, 2.6, 260);
+    plushLight.position.set(0, 5, -80);
+    universeGroup.add(plushLight);
 
-    let pIdx = 0;
-    const centerParticles = 1200;
-    for (let i = 0; i < centerParticles; i++) {
-      const r = Math.sqrt(Math.random()) * centerRadius;
-      const angle = Math.random() * Math.PI * 2;
+    // --- TEXTURAS PROCEDURALES NÍTIDAS ---
+    // 1. Textura de tela para orejas y plantas de pies (ramitas, hojas y aves como el peluche real)
+    const fabricCanvas = document.createElement('canvas');
+    fabricCanvas.width = 256;
+    fabricCanvas.height = 256;
+    const fCtx = fabricCanvas.getContext('2d');
+    fCtx.fillStyle = '#ffffff';
+    fCtx.fillRect(0, 0, 256, 256);
+    fCtx.strokeStyle = '#6d4c41';
+    fCtx.lineWidth = 4.5;
+    fCtx.beginPath();
+    fCtx.moveTo(25, 230); fCtx.quadraticCurveTo(128, 125, 230, 25);
+    fCtx.moveTo(45, 65); fCtx.quadraticCurveTo(135, 175, 215, 225);
+    fCtx.stroke();
 
-      positions[pIdx * 3] = Math.cos(angle) * r;
-      positions[pIdx * 3 + 1] = Math.sin(angle) * r;
-      positions[pIdx * 3 + 2] = (Math.random() - 0.5) * 3;
-
-      colors[pIdx * 3] = 1.0;
-      colors[pIdx * 3 + 1] = 0.75 + Math.random() * 0.2;
-      colors[pIdx * 3 + 2] = 0.15;
-      pIdx++;
-    }
-
-    const petalParticles = particleCount - centerParticles;
-    const particlesPerPetal = Math.floor(petalParticles / petals);
-
-    for (let p = 0; p < petals; p++) {
-      const petalAngle = (p / petals) * Math.PI * 2;
-      const cosA = Math.cos(petalAngle);
-      const sinA = Math.sin(petalAngle);
-
-      for (let j = 0; j < particlesPerPetal; j++) {
-        const progress = Math.random();
-        const dist = centerRadius + progress * petalLength;
-        const w = Math.sin(progress * Math.PI) * petalWidth;
-        const lateral = (Math.random() - 0.5) * w;
-
-        const lx = dist;
-        const ly = lateral;
-
-        positions[pIdx * 3] = lx * cosA - ly * sinA;
-        positions[pIdx * 3 + 1] = lx * sinA + ly * cosA;
-        positions[pIdx * 3 + 2] = (Math.random() - 0.5) * 4;
-
-        colors[pIdx * 3] = 1.0;
-        colors[pIdx * 3 + 1] = 0.85 + Math.random() * 0.15;
-        colors[pIdx * 3 + 2] = 0.2 + Math.random() * 0.3;
-        pIdx++;
-      }
-    }
-
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-    const particleTexture = textureLoader.load('assets/particle.png');
-    const material = new THREE.PointsMaterial({
-      size: 2.6,
-      sizeAttenuation: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      vertexColors: true,
-      map: particleTexture,
-      transparent: true,
-      opacity: 0.95
+    fCtx.fillStyle = '#388e3c';
+    [[75, 135], [150, 90], [185, 50], [90, 200], [135, 160], [185, 190], [70, 70]].forEach(([lx, ly]) => {
+      fCtx.beginPath();
+      fCtx.ellipse(lx, ly, 13, 7, 0.6, 0, Math.PI * 2);
+      fCtx.fill();
     });
 
-    skySunflowerPoints = new THREE.Points(geometry, material);
-    skySunflowerPoints.position.set(0, 68, -55);
-    skySunflowerPoints.rotation.x = -0.15;
-    scene.add(skySunflowerPoints);
-  }
+    fCtx.fillStyle = '#0288d1';
+    fCtx.beginPath();
+    fCtx.ellipse(125, 68, 12, 7.5, 0.2, 0, Math.PI * 2);
+    fCtx.fill();
+    fCtx.beginPath();
+    fCtx.arc(133, 65, 5, 0, Math.PI * 2);
+    fCtx.fill();
 
-  // --- KOALA CELESTIAL VAYOLETT ("NUESTRA HIJITA") EN EL FONDO ---
-  function createVayolettKoala() {
-    const vayolettTex = textureLoader.load('assets/vayolett_koala.png');
-    const vayolettMat = new THREE.SpriteMaterial({
-      map: vayolettTex,
+    fCtx.fillStyle = '#d32f2f';
+    fCtx.beginPath();
+    fCtx.ellipse(175, 145, 11, 6.5, -0.3, 0, Math.PI * 2);
+    fCtx.fill();
+    const fabricTex = new THREE.CanvasTexture(fabricCanvas);
+
+    // 2. Parche de la barriguita con la espiral celeste bordada
+    const tummyCanvas = document.createElement('canvas');
+    tummyCanvas.width = 256;
+    tummyCanvas.height = 256;
+    const tCtx = tummyCanvas.getContext('2d');
+    tCtx.fillStyle = '#ffffff';
+    tCtx.fillRect(0, 0, 256, 256);
+    tCtx.strokeStyle = '#00acc1';
+    tCtx.lineWidth = 8;
+    tCtx.lineCap = 'round';
+    tCtx.beginPath();
+    for (let a = 0; a < 3.2 * Math.PI; a += 0.08) {
+      const r = 10 + a * 12;
+      const x = 128 + Math.cos(a) * r;
+      const y = 128 + Math.sin(a) * r;
+      if (a === 0) tCtx.moveTo(x, y);
+      else tCtx.lineTo(x, y);
+    }
+    tCtx.stroke();
+    const tummyTex = new THREE.CanvasTexture(tummyCanvas);
+
+    // --- MATERIALES DEL PELUCHE 3D ---
+    const furMat = new THREE.MeshStandardMaterial({
+      color: 0x758f9f, // felpa gris azulada suave con óptimo contraste
+      roughness: 0.72,
+      metalness: 0.04
+    });
+    const tummyMat = new THREE.MeshStandardMaterial({
+      map: tummyTex,
+      roughness: 0.88,
+      metalness: 0.02
+    });
+    const patternMat = new THREE.MeshStandardMaterial({
+      map: fabricTex,
+      roughness: 0.75
+    });
+    const noseMat = new THREE.MeshStandardMaterial({
+      color: 0x30180c, // gran nariz de chocolate oscuro
+      roughness: 0.55,
+      metalness: 0.1
+    });
+    const blushMat = new THREE.MeshStandardMaterial({
+      color: 0xff5c7d, // rubor rosa tierno en mejillas
+      roughness: 0.7,
+      transparent: true,
+      opacity: 0.92,
+      emissive: 0xff2a55,
+      emissiveIntensity: 0.25
+    });
+    const eyeMat = new THREE.MeshBasicMaterial({
+      color: 0x100a06 // bordado oscuro de ojos cerrados
+    });
+
+    // --- CUERPO 3D ---
+    const bodyGeo = new THREE.SphereGeometry(16, 32, 24);
+    const bodyMesh = new THREE.Mesh(bodyGeo, furMat);
+    bodyMesh.scale.set(1.1, 1.25, 1.0);
+    bodyMesh.position.set(0, 10, 0);
+    vayolett3DGroup.add(bodyMesh);
+
+    // Barriguita blanca con espiral
+    const bellyGeo = new THREE.SphereGeometry(12.5, 32, 20);
+    const bellyMesh = new THREE.Mesh(bellyGeo, tummyMat);
+    bellyMesh.scale.set(0.92, 1.05, 0.45);
+    bellyMesh.position.set(0, 9, 8.8);
+    bellyMesh.rotation.x = 0.15;
+    vayolett3DGroup.add(bellyMesh);
+
+    // --- CABEZA 3D ---
+    const headGroup = new THREE.Group();
+    headGroup.position.set(0, 33, 1);
+
+    const headGeo = new THREE.SphereGeometry(19, 36, 28);
+    const headMesh = new THREE.Mesh(headGeo, furMat);
+    headMesh.scale.set(1.22, 0.96, 1.05);
+    headGroup.add(headMesh);
+
+    // Orejas de koala esponjosas con interior estampado
+    [-1, 1].forEach((side) => {
+      const earOuterGeo = new THREE.SphereGeometry(12, 28, 20);
+      const earOuter = new THREE.Mesh(earOuterGeo, furMat);
+      earOuter.scale.set(1.0, 1.12, 0.55);
+      earOuter.position.set(side * 23, 7, -1);
+      earOuter.rotation.z = side * -0.28;
+      earOuter.rotation.y = side * 0.15;
+      headGroup.add(earOuter);
+
+      const earInnerGeo = new THREE.CylinderGeometry(9.2, 9.2, 0.6, 24);
+      const earInner = new THREE.Mesh(earInnerGeo, patternMat);
+      earInner.position.set(side * 23.2, 7, 2.2);
+      earInner.rotation.x = Math.PI / 2;
+      earInner.rotation.z = side * -0.28;
+      headGroup.add(earInner);
+    });
+
+    // Gran nariz ovalada de chocolate
+    const noseGeo = new THREE.SphereGeometry(5.4, 24, 18);
+    const noseMesh = new THREE.Mesh(noseGeo, noseMat);
+    noseMesh.scale.set(1.18, 1.45, 0.85);
+    noseMesh.position.set(0, -2.0, 18.8);
+    headGroup.add(noseMesh);
+
+    // Ojos dormilones curvados en 3D
+    [-1, 1].forEach((side) => {
+      const eyeGeo = new THREE.TorusGeometry(3.6, 0.65, 8, 24, Math.PI * 0.75);
+      const eyeMesh = new THREE.Mesh(eyeGeo, eyeMat);
+      eyeMesh.position.set(side * 9.2, 3.5, 18.2);
+      eyeMesh.rotation.x = -0.3;
+      eyeMesh.rotation.z = side > 0 ? 0.22 : Math.PI - 0.22;
+      headGroup.add(eyeMesh);
+
+      const blushGeo = new THREE.SphereGeometry(3.6, 16, 12);
+      const blushMesh = new THREE.Mesh(blushGeo, blushMat);
+      blushMesh.scale.set(1.15, 0.75, 0.35);
+      blushMesh.position.set(side * 12.5, -3.5, 17.4);
+      headGroup.add(blushMesh);
+    });
+
+    vayolett3DGroup.add(headGroup);
+
+    // --- BRAZOS Y PATITAS (abrazaditos en el pecho) ---
+    [-1, 1].forEach((side) => {
+      const armGeo = new THREE.CylinderGeometry(3.4, 4.2, 15, 16);
+      const armMesh = new THREE.Mesh(armGeo, furMat);
+      armMesh.position.set(side * 13, 13, 5.5);
+      armMesh.rotation.z = side * -0.72;
+      armMesh.rotation.x = 0.68;
+      armMesh.rotation.y = side * -0.25;
+      vayolett3DGroup.add(armMesh);
+    });
+
+    const pawGeo = new THREE.SphereGeometry(3.8, 16, 12);
+    const pawL = new THREE.Mesh(pawGeo, furMat);
+    pawL.position.set(-3.0, 12, 12.2);
+    vayolett3DGroup.add(pawL);
+    const pawR = new THREE.Mesh(pawGeo, furMat);
+    pawR.position.set(3.0, 12, 12.2);
+    vayolett3DGroup.add(pawR);
+
+    // Piernitas sentaditas con suelas estampadas
+    [-1, 1].forEach((side) => {
+      const legGeo = new THREE.CylinderGeometry(4.5, 5.2, 12, 16);
+      const legMesh = new THREE.Mesh(legGeo, furMat);
+      legMesh.position.set(side * 11, -1, 4.5);
+      legMesh.rotation.z = side * -0.42;
+      legMesh.rotation.x = 0.52;
+      vayolett3DGroup.add(legMesh);
+
+      const footGeo = new THREE.CylinderGeometry(5.6, 5.6, 1.2, 24);
+      const footMesh = new THREE.Mesh(footGeo, patternMat);
+      footMesh.position.set(side * 12.5, -5.0, 10.5);
+      footMesh.rotation.x = Math.PI * 0.45;
+      footMesh.rotation.z = side * 0.15;
+      vayolett3DGroup.add(footMesh);
+    });
+
+    // --- CARTEL FLOTANTE "VAYOLETT" Y ESTRELLAS 3D SOBRE SU CABECITA ---
+    const bannerCanvas = document.createElement('canvas');
+    bannerCanvas.width = 640;
+    bannerCanvas.height = 160;
+    const bCtx = bannerCanvas.getContext('2d');
+    bCtx.clearRect(0, 0, 640, 160);
+
+    bCtx.fillStyle = 'rgba(15, 10, 25, 0.94)';
+    bCtx.strokeStyle = '#ffd54f';
+    bCtx.lineWidth = 4;
+    roundRect(bCtx, 20, 20, 600, 120, 30, true, true);
+
+    bCtx.font = 'bold 54px system-ui, sans-serif';
+    bCtx.textAlign = 'center';
+    bCtx.fillStyle = '#ffecb3';
+    bCtx.shadowColor = '#ffb300';
+    bCtx.shadowBlur = 15;
+    bCtx.fillText('★  VAYOLETT  ★', 320, 78);
+
+    bCtx.font = '22px system-ui, sans-serif';
+    bCtx.fillStyle = '#ffffff';
+    bCtx.shadowBlur = 8;
+    bCtx.fillText('Nuestra Hijita de las Estrellas', 320, 118);
+
+    const bannerTex = new THREE.CanvasTexture(bannerCanvas);
+    const bannerMat = new THREE.SpriteMaterial({
+      map: bannerTex,
       transparent: true,
       depthWrite: false
     });
+    const bannerSprite = new THREE.Sprite(bannerMat);
+    bannerSprite.scale.set(52, 13, 1);
+    bannerSprite.position.set(0, 48, 2);
+    vayolett3DGroup.add(bannerSprite);
 
-    vayolettSprite = new THREE.Sprite(vayolettMat);
-    // Tamaño imponente en el fondo cósmico, visible como guardiana estelar
-    vayolettSprite.scale.set(120, 151, 1);
-    vayolettSprite.position.set(0, 18, -195);
-    vayolettSprite.userData = {
+    // Estrellas 3D doradas orbitando el letrero
+    const starShape = create5PointStarShape(2.6, 1.2);
+    const starGeo = new THREE.ExtrudeGeometry(starShape, { depth: 0.6, bevelEnabled: true, bevelThickness: 0.2, bevelSize: 0.2, bevelSegments: 2 });
+    const goldStarMat = new THREE.MeshStandardMaterial({
+      color: 0xffd700,
+      metalness: 0.8,
+      roughness: 0.2,
+      emissive: 0xffa000,
+      emissiveIntensity: 0.4
+    });
+    const starL = new THREE.Mesh(starGeo, goldStarMat);
+    starL.position.set(-30, 48, 4);
+    vayolett3DGroup.add(starL);
+
+    const starR = new THREE.Mesh(starGeo, goldStarMat);
+    starR.position.set(30, 48, 4);
+    vayolett3DGroup.add(starR);
+
+    vayolett3DGroup.userData = {
       isVayolett: true,
       title: '★ VAYOLETT ★',
       desc: '¡Hola mami Meycita bella! Soy Vayolett, su hijita. Desde aquí en las estrellas los cuido siempre y veo lo mucho que se aman. Papi Uli te adora con toda su alma. ¡Feliz día de las flores amarillas! 🐨💛✨',
-      svg: 'assets/vayolett_koala.png'
+      svg: 'assets/vayolett_koala.png',
+      starL: starL,
+      starR: starR,
+      headGroup: headGroup
     };
 
-    scene.add(vayolettSprite);
-    interactiveObjects.push(vayolettSprite);
+    universeGroup.add(vayolett3DGroup);
+    interactiveObjects.push(bodyMesh, headMesh);
+    bodyMesh.userData = vayolett3DGroup.userData;
+    headMesh.userData = vayolett3DGroup.userData;
   }
 
-  // --- GIRASOL INTERACTIVO QUE CRECE EN EL MEDIO AL ABRIR NOTITAS ---
-  function createCenterSunflowerPlant() {
-    centerSunflowerPlant = new THREE.Group();
+  // --- GIRASOL 3D PROCEDURAL EN CRECIMIENTO (CERO CUADROS NEGROS) ---
+  function createCenterSunflower3D() {
+    centerSunflower3D = new THREE.Group();
+    centerSunflower3D.position.set(0, 0, 0);
 
-    // 1. Tallo y hojas (Representación con sprites de alta resolución)
-    const flowerTex = textureLoader.load('assets/sunflower.svg');
-    const flowerMat = new THREE.SpriteMaterial({
-      map: flowerTex,
-      transparent: true,
-      depthWrite: false
+    // Materiales 100% Geométricos 3D estándar
+    const stemMat = new THREE.MeshStandardMaterial({
+      color: 0x2e7d32,
+      roughness: 0.7,
+      metalness: 0.1
     });
-    const plantSprite = new THREE.Sprite(flowerMat);
-    plantSprite.scale.set(24, 30, 1);
-    plantSprite.position.set(0, 15, 0);
-    centerSunflowerPlant.add(plantSprite);
-
-    // 2. Halo de crecimiento dorado
-    const haloTex = textureLoader.load('assets/particle.png');
-    const haloMat = new THREE.SpriteMaterial({
-      map: haloTex,
-      color: 0xffd700,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      opacity: 0.7
+    const leafMat = new THREE.MeshStandardMaterial({
+      color: 0x388e3c,
+      roughness: 0.6,
+      metalness: 0.05,
+      side: THREE.DoubleSide
     });
-    const plantHalo = new THREE.Sprite(haloMat);
-    plantHalo.scale.set(32, 32, 1);
-    plantHalo.position.set(0, 15, 0);
-    centerSunflowerPlant.add(plantHalo);
+    const calyxMat = new THREE.MeshStandardMaterial({
+      color: 0x1b5e20,
+      roughness: 0.8
+    });
+    const petalMat1 = new THREE.MeshStandardMaterial({
+      color: 0xffb300,
+      roughness: 0.5,
+      metalness: 0.05,
+      side: THREE.DoubleSide,
+      emissive: 0xff8f00,
+      emissiveIntensity: 0.25
+    });
+    const petalMat2 = new THREE.MeshStandardMaterial({
+      color: 0xffca28,
+      roughness: 0.45,
+      metalness: 0.05,
+      side: THREE.DoubleSide,
+      emissive: 0xffa000,
+      emissiveIntensity: 0.2
+    });
+    const seedCenterMat = new THREE.MeshStandardMaterial({
+      color: 0x3e2723,
+      roughness: 0.85,
+      metalness: 0.1
+    });
 
-    // Escala inicial: brote pequeño (crecerá conforme abra notitas)
-    centerSunflowerPlant.scale.set(0.18, 0.18, 0.18);
-    centerSunflowerPlant.position.set(0, 0, 0);
+    // 1. Tallo 3D (Cilindro con pivote en la base y altura dinámica)
+    const stemGeo = new THREE.CylinderGeometry(0.55, 0.75, 1.0, 16);
+    stemGeo.translate(0, 0.5, 0);
+    const stemMesh = new THREE.Mesh(stemGeo, stemMat);
+    stemMesh.scale.set(1, 2.5, 1);
+    centerSunflower3D.add(stemMesh);
 
-    scene.add(centerSunflowerPlant);
+    // 2. Hojas 3D
+    const leavesGroup = new THREE.Group();
+    const leafShape = new THREE.Shape();
+    leafShape.moveTo(0, 0);
+    leafShape.quadraticCurveTo(1.6, 2.0, 0, 5.5);
+    leafShape.quadraticCurveTo(-1.6, 2.0, 0, 0);
+    const leafGeo = new THREE.ShapeGeometry(leafShape);
+
+    const leaves = [];
+    const leafConfigs = [
+      { yRatio: 0.22, angle: 0.2, rotZ: 0.85, baseScale: 0.8 },
+      { yRatio: 0.45, angle: Math.PI * 0.85, rotZ: 0.75, baseScale: 1.0 },
+      { yRatio: 0.68, angle: Math.PI * 1.55, rotZ: 0.8, baseScale: 1.15 },
+      { yRatio: 0.88, angle: Math.PI * 0.35, rotZ: 0.7, baseScale: 0.95 }
+    ];
+    leafConfigs.forEach((cfg) => {
+      const leafMesh = new THREE.Mesh(leafGeo, leafMat);
+      leafMesh.rotation.y = cfg.angle;
+      leafMesh.rotation.z = cfg.rotZ;
+      leafMesh.scale.set(0.25, 0.25, 0.25);
+      leavesGroup.add(leafMesh);
+      leaves.push({ mesh: leafMesh, cfg: cfg });
+    });
+    centerSunflower3D.add(leavesGroup);
+
+    // 3. Cabeza Floral 3D (Cáliz, Centro de Semillas y 36 Pétalos Dorados)
+    const flowerHead = new THREE.Group();
+
+    const calyxGeo = new THREE.CylinderGeometry(3.6, 1.2, 1.2, 20);
+    const calyxMesh = new THREE.Mesh(calyxGeo, calyxMat);
+    calyxMesh.rotation.x = Math.PI / 2;
+    flowerHead.add(calyxMesh);
+
+    const seedGeo = new THREE.CylinderGeometry(4.8, 4.8, 0.9, 32);
+    const seedMesh = new THREE.Mesh(seedGeo, seedCenterMat);
+    seedMesh.rotation.x = Math.PI / 2;
+    flowerHead.add(seedMesh);
+
+    // 36 Pétalos en 2 niveles concéntricos
+    const petalShape = new THREE.Shape();
+    petalShape.moveTo(0, 0);
+    petalShape.quadraticCurveTo(1.25, 3.8, 0, 8.2);
+    petalShape.quadraticCurveTo(-1.25, 3.8, 0, 0);
+    const petalGeo = new THREE.ShapeGeometry(petalShape);
+
+    const petalCount = 18;
+    for (let i = 0; i < petalCount; i++) {
+      const angle = (i / petalCount) * Math.PI * 2;
+      // Nivel 1 (exterior)
+      const p1 = new THREE.Mesh(petalGeo, petalMat1);
+      p1.position.set(Math.cos(angle) * 4.2, Math.sin(angle) * 4.2, 0.1);
+      p1.rotation.z = angle - Math.PI / 2;
+      p1.rotation.x = 0.15;
+      flowerHead.add(p1);
+
+      // Nivel 2 (interior intercalado)
+      const angle2 = angle + (Math.PI / petalCount);
+      const p2 = new THREE.Mesh(petalGeo, petalMat2);
+      p2.scale.set(0.88, 0.88, 0.88);
+      p2.position.set(Math.cos(angle2) * 3.8, Math.sin(angle2) * 3.8, 0.25);
+      p2.rotation.z = angle2 - Math.PI / 2;
+      p2.rotation.x = 0.22;
+      flowerHead.add(p2);
+    }
+
+    flowerHead.rotation.x = -0.35;
+    flowerHead.scale.set(0.001, 0.001, 0.001); // Oculto al inicio como brote
+    flowerHead.position.set(0, 2.5, 0);
+    centerSunflower3D.add(flowerHead);
+
+    centerSunflower3D.userData = {
+      stemMesh: stemMesh,
+      leaves: leaves,
+      flowerHead: flowerHead,
+      currentHeight: 2.5,
+      targetHeight: 2.5,
+      currentHeadScale: 0.001,
+      targetHeadScale: 0.001
+    };
+
+    universeGroup.add(centerSunflower3D);
+  }
+
+  // --- ACTUALIZAR CRECIMIENTO DINÁMICO DEL GIRASOL 3D ---
+  function updateSunflowerGrowth() {
+    const count = openedNotes.size;
+    if (openedCountElem) {
+      openedCountElem.textContent = count;
+    }
+
+    sunflowerGrowthProgress = count / 12.0;
+
+    if (centerSunflower3D) {
+      const u = centerSunflower3D.userData;
+      u.targetHeight = 2.5 + sunflowerGrowthProgress * 23.5;
+
+      if (count < 3) {
+        u.targetHeadScale = 0.001;
+      } else {
+        const headProg = (count - 2) / 10.0;
+        u.targetHeadScale = 0.35 + headProg * 1.25;
+      }
+    }
+
+    if (count === 12 && !hasTriggeredFinale) {
+      hasTriggeredFinale = true;
+      setTimeout(triggerGrandFinale, 600);
+    }
   }
 
   // --- NÚCLEO CENTRAL: CARTEL GIGANTE "MAYBETH" Y CORAZONES ROJOS CON ULI ---
@@ -546,7 +874,6 @@
     });
 
     const maybethSprite = new THREE.Sprite(spriteMat);
-    // Escala gigante visible desde cualquier ángulo
     maybethSprite.scale.set(78, 23.4, 1);
     maybethSprite.position.set(0, 14, 0);
     maybethSprite.userData = {
@@ -558,129 +885,111 @@
     centralMaybethGroup.add(maybethSprite);
     interactiveObjects.push(maybethSprite);
 
-    // 2. Corazones Rojitos con el nombre de "Uli" orbitando en 3D
-    const heartUliTex = textureLoader.load('assets/sprite_heart_uli.png');
-    const heartCount = 8;
+    // 2. Corazones Rojos Brillantes con el nombre "Uli" orbitando en 3D
+    const uliHeartTex = textureLoader.load('assets/sprite_heart_uli.png');
+    const heartMat = new THREE.SpriteMaterial({
+      map: uliHeartTex,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.NormalBlending
+    });
 
+    const heartCount = 8;
+    const orbitRadius = 42;
     for (let i = 0; i < heartCount; i++) {
-      const hMat = new THREE.SpriteMaterial({
-        map: heartUliTex,
-        transparent: true,
-        depthWrite: false
-      });
-      const hSprite = new THREE.Sprite(hMat);
-      hSprite.scale.set(6.8, 6.8, 1);
-      hSprite.userData = {
-        orbitAngle: (i / heartCount) * Math.PI * 2,
-        orbitRadius: 26 + (i % 3) * 4,
-        orbitSpeed: 0.75 + (i * 0.08),
-        yOffset: 14 + (i % 2 === 0 ? -4 : 4)
+      const heartSprite = new THREE.Sprite(heartMat);
+      heartSprite.scale.set(7.5, 7.5, 1);
+
+      const angle = (i / heartCount) * Math.PI * 2;
+      heartSprite.position.set(
+        Math.cos(angle) * orbitRadius,
+        14 + Math.sin(i * 1.5) * 3,
+        Math.sin(angle) * orbitRadius
+      );
+
+      heartSprite.userData = {
+        isHeart: true,
+        orbitRadius: orbitRadius,
+        orbitAngle: angle,
+        orbitSpeed: 0.65 + (i % 3) * 0.25,
+        yOffset: 14 + ((i % 4) - 1.5) * 2.2
       };
-      centralMaybethGroup.add(hSprite);
+
+      centralMaybethGroup.add(heartSprite);
     }
 
-    scene.add(centralMaybethGroup);
+    universeGroup.add(centralMaybethGroup);
   }
 
-  // --- CREACIÓN DE FLORES 3D INTERACTIVAS Y SUS FRASES ---
+  // --- FLORES INTERACTIVAS EN LOS BRAZOS ESPIRALES ---
   function createInteractiveFlowers() {
-    scene.add(flowersGroup);
-
-    FLOWERS_DATA.forEach((flowerData) => {
+    FLOWERS_DATA.forEach((flower) => {
       const flowerSubGroup = new THREE.Group();
-
-      const x = Math.cos(flowerData.angle) * flowerData.radius;
-      const z = Math.sin(flowerData.angle) * flowerData.radius;
-      const y = flowerData.height;
-
+      const x = Math.cos(flower.angle) * flower.radius;
+      const z = Math.sin(flower.angle) * flower.radius;
+      const y = flower.height;
       flowerSubGroup.position.set(x, y, z);
-      flowerSubGroup.userData = {
-        baseY: y,
-        bobSpeed: 1.6 + Math.random() * 0.6,
-        bobOffset: Math.random() * Math.PI * 2,
-        data: flowerData
-      };
 
-      // 1. Sprite de la Flor
-      const flowerTex = textureLoader.load(flowerData.sprite);
-      const flowerSpriteMat = new THREE.SpriteMaterial({
-        map: flowerTex,
-        transparent: true,
-        depthWrite: false
-      });
-      const flowerSprite = new THREE.Sprite(flowerSpriteMat);
-
-      const scaleVal = flowerData.type === 'bouquet' ? 14 : (flowerData.type === 'roses' ? 13 : 11);
-      flowerSprite.scale.set(scaleVal, scaleVal, 1);
-      flowerSprite.position.set(0, scaleVal * 0.35, 0);
-
-      flowerSprite.userData = {
-        isFlower: true,
-        parentGroup: flowerSubGroup,
-        baseScale: scaleVal,
-        data: flowerData
-      };
-
-      flowerSubGroup.add(flowerSprite);
-      interactiveObjects.push(flowerSprite);
-
-      // 2. Halo de Luz bajo la flor
-      const haloCanvas = document.createElement('canvas');
-      haloCanvas.width = 128;
-      haloCanvas.height = 128;
-      const hctx = haloCanvas.getContext('2d');
-      const grad = hctx.createRadialGradient(64, 64, 5, 64, 64, 60);
-      grad.addColorStop(0, 'rgba(255, 235, 59, 0.9)');
-      grad.addColorStop(0.5, 'rgba(255, 179, 0, 0.4)');
-      grad.addColorStop(1, 'rgba(255, 152, 0, 0)');
-      hctx.fillStyle = grad;
-      hctx.fillRect(0, 0, 128, 128);
-
-      const haloTex = new THREE.CanvasTexture(haloCanvas);
-      const haloGeo = new THREE.PlaneGeometry(scaleVal * 1.5, scaleVal * 1.5);
-      const haloMat = new THREE.MeshBasicMaterial({
+      // Ícono de flor con halo resplandeciente
+      const haloTex = textureLoader.load('assets/particle.png');
+      const haloMat = new THREE.SpriteMaterial({
         map: haloTex,
+        color: 0xffecb3,
         transparent: true,
         blending: THREE.AdditiveBlending,
-        side: THREE.DoubleSide,
+        opacity: 0.85
+      });
+      const haloSprite = new THREE.Sprite(haloMat);
+      haloSprite.scale.set(17, 17, 1);
+      flowerSubGroup.add(haloSprite);
+
+      const fTex = textureLoader.load(flower.sprite);
+      const fMat = new THREE.SpriteMaterial({
+        map: fTex,
+        transparent: true,
         depthWrite: false
       });
-      const haloMesh = new THREE.Mesh(haloGeo, haloMat);
-      haloMesh.rotation.x = Math.PI / 2;
-      haloMesh.position.y = 0.2;
-      flowerSubGroup.add(haloMesh);
+      const fSprite = new THREE.Sprite(fMat);
+      fSprite.scale.set(11, 11, 1);
+      fSprite.userData = {
+        isFlower: true,
+        data: flower,
+        baseScale: 11
+      };
+      flowerSubGroup.add(fSprite);
+      interactiveObjects.push(fSprite);
 
-      // 3. Etiqueta con la frase romántica en 3D
-      const labelSprite = createTextLabelSprite(flowerData.title);
-      labelSprite.position.set(0, -1.2, 0);
+      // Etiqueta 3D con el título
+      const labelSprite = createTextLabelSprite(flower.title);
+      labelSprite.position.set(0, -6.8, 0);
       flowerSubGroup.add(labelSprite);
+
+      flowerSubGroup.userData = {
+        baseY: y,
+        bobSpeed: 1.2 + Math.random() * 0.8,
+        bobOffset: Math.random() * Math.PI * 2
+      };
 
       flowersGroup.add(flowerSubGroup);
     });
+
+    universeGroup.add(flowersGroup);
   }
 
-  // --- CREAR ETIQUETAS DE TEXTO 3D CON ESTILO LUMINOSO ---
+  // Generador de etiquetas 3D de texto nítidas
   function createTextLabelSprite(text) {
     const canvas = document.createElement('canvas');
     canvas.width = 512;
     canvas.height = 128;
     const ctx = canvas.getContext('2d');
 
-    ctx.font = 'bold 44px "Caveat", "Dancing Script", cursive, sans-serif';
+    ctx.font = 'bold 36px system-ui, -apple-system, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    ctx.strokeStyle = 'rgba(5, 2, 10, 0.88)';
-    ctx.lineWidth = 7;
-    ctx.strokeText(text, 256, 64);
-
-    ctx.shadowColor = 'rgba(255, 215, 0, 0.95)';
-    ctx.shadowBlur = 18;
-    ctx.fillStyle = '#fffde7';
-    ctx.fillText(text, 256, 64);
-
-    ctx.shadowBlur = 8;
-    ctx.fillStyle = '#ffffff';
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
+    ctx.shadowBlur = 10;
+    ctx.fillStyle = '#fffae0';
     ctx.fillText(text, 256, 64);
 
     const texture = new THREE.CanvasTexture(canvas);
@@ -692,6 +1001,236 @@
     const sprite = new THREE.Sprite(spriteMat);
     sprite.scale.set(19, 4.75, 1);
     return sprite;
+  }
+
+  // --- MOTOR DE HIPERESPACIO PRE-CONSTRUIDO ---
+  function createHyperspaceEngine() {
+    warpGroup = new THREE.Group();
+    warpGroup.visible = false;
+    scene.add(warpGroup);
+
+    // 1. 2,000 Partículas brillantes de hipervelocidad
+    const starCount = 2000;
+    const pGeo = new THREE.BufferGeometry();
+    const pos = new Float32Array(starCount * 3);
+    const col = new Float32Array(starCount * 3);
+
+    const starData = [];
+    for (let i = 0; i < starCount; i++) {
+      const radius = 3 + Math.random() * 85;
+      const angle = Math.random() * Math.PI * 2;
+      const x = Math.cos(angle) * radius;
+      const y = Math.sin(angle) * radius;
+      const z = -450 + Math.random() * 650;
+
+      pos[i * 3] = x;
+      pos[i * 3 + 1] = y;
+      pos[i * 3 + 2] = z;
+
+      const isGold = Math.random() > 0.35;
+      col[i * 3] = 1.0;
+      col[i * 3 + 1] = isGold ? 0.88 : 1.0;
+      col[i * 3 + 2] = isGold ? 0.35 : 1.0;
+
+      starData.push({ x, y, z, speed: 480 + Math.random() * 480, radius, angle });
+    }
+
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    pGeo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+
+    const pTex = textureLoader.load('assets/particle.png');
+    const pMat = new THREE.PointsMaterial({
+      size: 16.0,
+      sizeAttenuation: true,
+      map: pTex,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.95,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    warpStarsMesh = new THREE.Points(pGeo, pMat);
+    warpStarsMesh.userData = { starData: starData };
+    warpGroup.add(warpStarsMesh);
+
+    // 2. 14 Anillos de Hiperespacio luminosos
+    warpRings = [];
+    const ringMat = new THREE.MeshBasicMaterial({
+      color: 0xffd54f,
+      transparent: true,
+      opacity: 0.55,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide
+    });
+    const ringGeo = new THREE.TorusGeometry(32, 1.1, 12, 36);
+
+    for (let i = 0; i < 14; i++) {
+      const ring = new THREE.Mesh(ringGeo, ringMat);
+      ring.position.set(0, 0, -450 + i * 50);
+      warpGroup.add(ring);
+      warpRings.push(ring);
+    }
+
+    // 3. 45 Flores 3D que pasan a toda velocidad hacia la pantalla
+    warpFlowers = [];
+    const flowerSprites = [
+      'assets/sprite_sunflower.png',
+      'assets/sprite_bouquet.png',
+      'assets/sprite_daisy.png',
+      'assets/sprite_roses.png'
+    ];
+
+    const warpFlowerCount = 45;
+    for (let i = 0; i < warpFlowerCount; i++) {
+      const texPath = flowerSprites[i % flowerSprites.length];
+      const tex = textureLoader.load(texPath);
+      const mat = new THREE.SpriteMaterial({
+        map: tex,
+        transparent: true,
+        depthWrite: false
+      });
+      const sprite = new THREE.Sprite(mat);
+      const sz = 12 + Math.random() * 22; // Tamaño grande visible
+      sprite.scale.set(sz, sz, 1);
+
+      const rad = 4 + Math.random() * 45; // Justo frente a la lente
+      const ang = Math.random() * Math.PI * 2;
+      const fx = Math.cos(ang) * rad;
+      const fy = Math.sin(ang) * rad;
+      const fz = -450 + (i / warpFlowerCount) * 650;
+
+      sprite.position.set(fx, fy, fz);
+      warpGroup.add(sprite);
+
+      warpFlowers.push({
+        sprite: sprite,
+        x: fx,
+        y: fy,
+        z: fz,
+        speed: 420 + Math.random() * 450,
+        rotSpeed: (Math.random() - 0.5) * 7,
+        radius: rad,
+        angle: ang
+      });
+    }
+  }
+
+  // --- VIAJE A LA VELOCIDAD DE LA LUZ / HIPERESPACIO (4 SEGUNDOS) ---
+  function startHyperspaceWarp() {
+    isWarping = true;
+    warpStartTime = performance.now();
+
+    if (warpGroup) warpGroup.visible = true;
+
+    controls.enabled = false;
+
+    // Cámara en túnel mirando directamente hacia adelante
+    camera.position.set(0, 0, 180);
+    camera.lookAt(0, 0, -400);
+
+    universeGroup.position.z = -550;
+    universeGroup.scale.set(0.12, 0.12, 0.12);
+  }
+
+  // Actualización cuadro a cuadro del túnel de hiperespacio
+  function updateHyperspaceWarp(now, delta) {
+    if (!isWarping) return;
+
+    const elapsed = now - warpStartTime;
+    const progress = Math.min(elapsed / WARP_DURATION, 1.0);
+
+    let speedFactor;
+    if (progress < 0.22) {
+      speedFactor = Math.pow(progress / 0.22, 2);
+    } else if (progress < 0.70) {
+      speedFactor = 1.0;
+    } else {
+      const decel = (progress - 0.70) / 0.30;
+      speedFactor = Math.pow(1 - decel, 2.2);
+    }
+
+    // 1. Mover estrellas de hiperespacio
+    if (warpStarsMesh) {
+      const pos = warpStarsMesh.geometry.attributes.position.array;
+      const sData = warpStarsMesh.userData.starData;
+      const count = sData.length;
+
+      for (let i = 0; i < count; i++) {
+        let z = pos[i * 3 + 2] + speedFactor * sData[i].speed * delta;
+        if (z > camera.position.z + 40) {
+          z = -480;
+        }
+        pos[i * 3 + 2] = z;
+      }
+      warpStarsMesh.geometry.attributes.position.needsUpdate = true;
+    }
+
+    // 2. Mover anillos luminosos
+    warpRings.forEach((ring) => {
+      ring.position.z += speedFactor * 380 * delta;
+      if (ring.position.z > camera.position.z + 20) {
+        ring.position.z = -480;
+      }
+      ring.rotation.z += 0.8 * delta;
+    });
+
+    // 3. Mover flores a toda velocidad pasando al lado de la pantalla
+    warpFlowers.forEach((f) => {
+      f.z += speedFactor * f.speed * delta;
+      if (f.z > camera.position.z + 30) {
+        f.z = -480;
+        f.angle = Math.random() * Math.PI * 2;
+        f.radius = 4 + Math.random() * 45;
+        f.x = Math.cos(f.angle) * f.radius;
+        f.y = Math.sin(f.angle) * f.radius;
+      }
+      f.sprite.position.set(f.x, f.y, f.z);
+      f.sprite.material.rotation += f.rotSpeed * delta;
+    });
+
+    // 4. Acercamiento progresivo de la Galaxia
+    if (progress < 0.70) {
+      const gProg = progress / 0.70;
+      const gEase = Math.pow(gProg, 2.2);
+      universeGroup.position.z = -550 + gEase * 300;
+      const gSc = 0.12 + gEase * 0.45;
+      universeGroup.scale.set(gSc, gSc, gSc);
+      camera.lookAt(0, 0, -400);
+    } else {
+      // Fase de frenado y acomodo orbital
+      const exitProgress = (progress - 0.70) / 0.30;
+      const ease = 1 - Math.pow(1 - exitProgress, 3);
+
+      universeGroup.position.z = -250 + ease * 250;
+      const gSc = 0.57 + ease * 0.43;
+      universeGroup.scale.set(gSc, gSc, gSc);
+
+      camera.position.x = 0;
+      camera.position.y = ease * 95;
+      camera.position.z = 180 - ease * (180 - 155);
+      camera.lookAt(0, 0, 0);
+
+      if (warpGroup) {
+        warpStarsMesh.material.opacity = (1 - ease) * 0.95;
+        warpRings.forEach(r => { r.material.opacity = (1 - ease) * 0.55; });
+        warpFlowers.forEach(wf => { wf.sprite.material.opacity = (1 - ease); });
+      }
+    }
+
+    // 5. Conclusión del viaje (4.0s)
+    if (progress >= 1.0) {
+      isWarping = false;
+      if (warpGroup) {
+        warpGroup.visible = false;
+      }
+      universeGroup.position.set(0, 0, 0);
+      universeGroup.scale.set(1, 1, 1);
+      camera.position.set(0, 95, 155);
+      controls.target.set(0, 0, 0);
+      controls.enabled = true;
+      controls.autoRotate = true;
+    }
   }
 
   // --- GESTIÓN DE EVENTOS ---
@@ -714,14 +1253,9 @@
 
     btnAudio.addEventListener('click', toggleAudio);
     btnResetCam.addEventListener('click', resetCameraView);
-
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('autostart') === '1') {
-      setTimeout(startExperience, 200);
-    }
   }
 
-  // --- INICIAR EXPERIENCIA ---
+  // --- INICIAR EXPERIENCIA (DISPARADOR DEL VIAJE) ---
   function startExperience() {
     if (isStarted) return;
     isStarted = true;
@@ -731,29 +1265,9 @@
     introScreen.classList.add('fade-out');
     setTimeout(() => {
       if (introScreen) introScreen.style.display = 'none';
-    }, 1200);
+    }, 1000);
 
-    const startY = 160;
-    const targetY = 95;
-    const startZ = 240;
-    const targetZ = 155;
-    const duration = 2400;
-    const startTime = performance.now();
-
-    function flyIn(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
-
-      camera.position.y = startY - (startY - targetY) * ease;
-      camera.position.z = startZ - (startZ - targetZ) * ease;
-      controls.target.set(0, 0, 0);
-
-      if (progress < 1) {
-        requestAnimationFrame(flyIn);
-      }
-    }
-    requestAnimationFrame(flyIn);
+    startHyperspaceWarp();
   }
 
   // --- GESTIÓN DE AUDIO ---
@@ -763,7 +1277,7 @@
       musicBars.classList.remove('paused');
       audioStatusText.textContent = 'Música';
     }).catch((err) => {
-      console.warn('Autoplay bloqueado o archivo no listo:', err);
+      console.warn('Autoplay bloqueado:', err);
       musicBars.classList.add('paused');
       audioStatusText.textContent = 'Activar';
     });
@@ -792,6 +1306,7 @@
 
   // --- DETECCIÓN DE HOVER ---
   function onMouseMove(event) {
+    if (isWarping) return;
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
@@ -834,6 +1349,7 @@
 
   // --- CLIC EN OBJETOS (FLORES, MAYBETH, VAYOLETT) ---
   function onFlowerClick(event) {
+    if (isWarping) return;
     if (event.target.closest('#ui-overlay') || event.target.closest('#flower-modal')) return;
 
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -849,6 +1365,7 @@
   }
 
   function onTouchEnd(event) {
+    if (isWarping) return;
     if (event.touches.length > 0) return;
     if (event.target.closest('#ui-overlay') || event.target.closest('#flower-modal')) return;
 
@@ -870,7 +1387,6 @@
       const flower = selected.userData.data;
       openModal(flower);
 
-      // Registrar progreso de crecimiento del girasol
       if (!openedNotes.has(flower.id)) {
         openedNotes.add(flower.id);
         updateSunflowerGrowth();
@@ -890,49 +1406,31 @@
     }
   }
 
-  // --- ACTUALIZAR CRECIMIENTO DEL GIRASOL EN EL CENTRO ---
-  function updateSunflowerGrowth() {
-    const count = openedNotes.size;
-    if (openedCountElem) {
-      openedCountElem.textContent = count;
-    }
-
-    // Progreso de 0 a 1
-    sunflowerGrowthProgress = count / 12.0;
-
-    // Si abrió todas las 12 notitas: ¡GRAN FINAL!
-    if (count === 12 && !hasTriggeredFinale) {
-      hasTriggeredFinale = true;
-      setTimeout(triggerGrandFinale, 600);
-    }
-  }
-
   // --- GRAN FINAL CUANDO ABRE TODAS LAS NOTITAS ---
   function triggerGrandFinale() {
-    // 1. Crear explosión de fuegos estelares dorados en el centro
-    const burstCount = 1500;
+    const burstCount = 1800;
     const bGeo = new THREE.BufferGeometry();
     const bPos = new Float32Array(burstCount * 3);
     const bVel = new Float32Array(burstCount * 3);
 
     for (let i = 0; i < burstCount; i++) {
       bPos[i * 3] = 0;
-      bPos[i * 3 + 1] = 15;
+      bPos[i * 3 + 1] = 25;
       bPos[i * 3 + 2] = 0;
 
-      const speed = 25 + Math.random() * 45;
+      const speed = 30 + Math.random() * 55;
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.random() * Math.PI;
 
       bVel[i * 3] = Math.sin(phi) * Math.cos(theta) * speed;
-      bVel[i * 3 + 1] = Math.cos(phi) * speed + 10;
+      bVel[i * 3 + 1] = Math.cos(phi) * speed + 12;
       bVel[i * 3 + 2] = Math.sin(phi) * Math.sin(theta) * speed;
     }
 
     bGeo.setAttribute('position', new THREE.BufferAttribute(bPos, 3));
     const pTex = textureLoader.load('assets/particle.png');
     const bMat = new THREE.PointsMaterial({
-      size: 3.5,
+      size: 3.8,
       map: pTex,
       color: 0xffd700,
       transparent: true,
@@ -940,44 +1438,41 @@
       depthWrite: false
     });
     finaleBurstPoints = new THREE.Points(bGeo, bMat);
-    scene.add(finaleBurstPoints);
+    universeGroup.add(finaleBurstPoints);
 
-    // 2. Animar partículas del estallido
     let burstStart = performance.now();
     function animateBurst(now) {
       const elapsed = (now - burstStart) / 1000.0;
       const pos = bGeo.attributes.position.array;
       for (let i = 0; i < burstCount; i++) {
         pos[i * 3] += bVel[i * 3] * 0.016;
-        pos[i * 3 + 1] += bVel[i * 3 + 1] * 0.016 - 0.2; // gravedad
+        pos[i * 3 + 1] += bVel[i * 3 + 1] * 0.016 - 0.22;
         pos[i * 3 + 2] += bVel[i * 3 + 2] * 0.016;
       }
       bGeo.attributes.position.needsUpdate = true;
-      bMat.opacity = Math.max(0, 1 - elapsed / 3.0);
 
-      if (elapsed < 3.5) {
+      if (elapsed < 4.5) {
         requestAnimationFrame(animateBurst);
       } else {
-        scene.remove(finaleBurstPoints);
+        universeGroup.remove(finaleBurstPoints);
       }
     }
     requestAnimationFrame(animateBurst);
 
-    // 3. Abrir la tarjeta final de celebración
     setTimeout(() => {
       openModal({
-        title: '¡FLORECIÓ TU GIRASOL GIGANTE, MEYCITA BELLA! 🌻',
-        desc: '¡Has descubierto todas las notitas de nuestra galaxia! Tu amor y dulzura hicieron florecer el girasol más hermoso del cosmos. Maybeth, eres muy especial para mí. Aunque ande a mil estudiando y desvelándome, todo mi esfuerzo es pensando en nuestro futuro. ¡Te debo algo muchote grandote! Te amodoro con toda mi alma, mi amorshote. ❤️🌻 — Tu Uli',
+        title: '🌻 ¡Tu Girasol Floreció, Meycita Bella! 🌻',
+        desc: 'Has descubierto cada una de las 12 notitas de amor en nuestra galaxia. Este gran girasol dorado representa lo inmenso que es mi amor por ti. ¡Te amodoro con toda mi alma, amorshote! Siempre serás mi mayor tesoro. 💕 — Tu Uli',
         svg: 'assets/sunflower.svg'
       });
-    }, 1200);
+    }, 1500);
   }
 
-  // --- ABRIR Y CERRAR MODAL ---
-  function openModal(data) {
-    modalTitle.textContent = data.title;
-    modalDesc.textContent = data.desc;
-    modalImg.src = data.svg || 'assets/sunflower.svg';
+  // --- MODAL DE DEDICATORIAS ---
+  function openModal(flower) {
+    modalTitle.textContent = flower.title;
+    modalDesc.textContent = flower.desc;
+    modalImg.src = flower.svg || 'assets/sunflower.svg';
 
     flowerModal.classList.add('active');
     controls.autoRotate = false;
@@ -985,22 +1480,24 @@
 
   function closeModal() {
     flowerModal.classList.remove('active');
-    controls.autoRotate = true;
+    if (isStarted && !isWarping) {
+      controls.autoRotate = true;
+    }
   }
 
-  // --- RESTABLECER VISTA DE CÁMARA ---
+  // --- RESTABLECER VISTA ---
   function resetCameraView() {
     const startPos = camera.position.clone();
-    const targetPos = new THREE.Vector3(0, 95, 155);
-    const startTime = performance.now();
+    const endPos = new THREE.Vector3(0, 95, 155);
     const duration = 1200;
+    const startTime = performance.now();
 
     function animateCam(now) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const ease = 1 - Math.pow(1 - progress, 3);
 
-      camera.position.lerpVectors(startPos, targetPos, ease);
+      camera.position.lerpVectors(startPos, endPos, ease);
       controls.target.set(0, 0, 0);
 
       if (progress < 1) {
@@ -1016,55 +1513,74 @@
   function animate() {
     requestAnimationFrame(animate);
 
+    const delta = clock.getDelta();
     const elapsedTime = clock.getElapsedTime();
+    const now = performance.now();
 
-    // 1. Rotación suave de la galaxia espiral
+    // 1. Manejo del viaje a la velocidad de la luz (4s)
+    if (isWarping) {
+      updateHyperspaceWarp(now, delta);
+    }
+
+    // 2. Rotación suave de la galaxia espiral
     if (galaxyPoints) {
       galaxyPoints.rotation.y = elapsedTime * 0.04;
     }
 
-    // 2. Rotación del disco de acreción central
+    // 3. Rotación del disco de acreción
     if (accretionMesh) {
       accretionMesh.rotation.z = -elapsedTime * 0.15;
     }
 
-    // 3. Animación de respiración / brillo del girasol gigante en el cielo
-    if (skySunflowerPoints) {
-      skySunflowerPoints.rotation.z = Math.sin(elapsedTime * 0.4) * 0.03;
-      skySunflowerPoints.position.y = 68 + Math.sin(elapsedTime * 0.8) * 1.5;
+    // 4. Animación del modelo 3D de VAYOLETT
+    if (vayolett3DGroup) {
+      vayolett3DGroup.position.y = -22 + Math.sin(elapsedTime * 0.8) * 1.8;
+
+      const u = vayolett3DGroup.userData;
+      if (u.headGroup) {
+        u.headGroup.rotation.y = Math.sin(elapsedTime * 0.5) * 0.12;
+        u.headGroup.rotation.z = Math.sin(elapsedTime * 0.7) * 0.05;
+      }
+      if (u.starL && u.starR) {
+        u.starL.rotation.y = elapsedTime * 1.5;
+        u.starL.rotation.z = Math.sin(elapsedTime * 2.0) * 0.2;
+        u.starR.rotation.y = -elapsedTime * 1.5;
+        u.starR.rotation.z = Math.cos(elapsedTime * 2.0) * 0.2;
+      }
     }
 
-    // 4. Animación del Koala Celestial VAYOLETT
-    if (vayolettSprite) {
-      vayolettSprite.position.y = 18 + Math.sin(elapsedTime * 0.7) * 2.5;
-      // Suave respiración
-      const breath = 1.0 + Math.sin(elapsedTime * 1.1) * 0.025;
-      vayolettSprite.scale.set(120 * breath, 151 * breath, 1);
-    }
+    // 5. Crecimiento dinámico e interpolación del Girasol 3D
+    if (centerSunflower3D) {
+      const u = centerSunflower3D.userData;
 
-    // 5. Crecimiento dinámico del girasol central
-    if (centerSunflowerPlant) {
-      // Escala objetivo basada en las notas abiertas:
-      // Si 0 notas: escala 0.22
-      // Si 12 notas: escala 2.8 (¡Girasol gigante!)
-      const targetScale = hasTriggeredFinale ? 2.8 : (0.22 + sunflowerGrowthProgress * 1.8);
-      centerSunflowerPlant.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.05);
+      u.currentHeight = THREE.MathUtils.lerp(u.currentHeight, u.targetHeight, 0.06);
+      u.stemMesh.scale.y = u.currentHeight;
 
-      // Oscilación suave
-      centerSunflowerPlant.rotation.y = Math.sin(elapsedTime * 0.5) * 0.1;
-      centerSunflowerPlant.position.y = Math.sin(elapsedTime * 1.5) * 0.8;
+      u.currentHeadScale = THREE.MathUtils.lerp(u.currentHeadScale, u.targetHeadScale, 0.06);
+      u.flowerHead.scale.set(u.currentHeadScale, u.currentHeadScale, u.currentHeadScale);
+      u.flowerHead.position.y = u.currentHeight;
+
+      u.flowerHead.rotation.z = Math.sin(elapsedTime * 0.8) * 0.06;
+
+      const leafScale = Math.min(0.25 + (u.currentHeight / 26.0) * 0.85, 1.15);
+      u.leaves.forEach((leaf) => {
+        leaf.mesh.position.y = leaf.cfg.yRatio * u.currentHeight;
+        const ls = leafScale * leaf.cfg.baseScale;
+        leaf.mesh.scale.set(ls, ls, ls);
+      });
+
+      centerSunflower3D.rotation.z = Math.sin(elapsedTime * 1.2) * 0.035;
+      centerSunflower3D.rotation.x = Math.cos(elapsedTime * 1.0) * 0.025;
     }
 
     // 6. Animación del núcleo central "MAYBETH" y los corazones con "Uli"
     if (centralMaybethGroup) {
       const maybethSprite = centralMaybethGroup.children[0];
       if (maybethSprite) {
-        // Pulso suave del letrero gigante MAYBETH
         const pulse = 1.0 + Math.sin(elapsedTime * 2.2) * 0.035;
         maybethSprite.scale.set(78 * pulse, 23.4 * pulse, 1);
       }
 
-      // Orbitar los 8 corazones rojos de "Uli" en 3D
       for (let i = 1; i < centralMaybethGroup.children.length; i++) {
         const h = centralMaybethGroup.children[i];
         if (h.userData.orbitAngle !== undefined) {
@@ -1083,10 +1599,44 @@
     });
 
     // 8. Actualizar Controles Orbitales
-    controls.update();
+    if (!isWarping) {
+      controls.update();
+    }
 
     // 9. Renderizar
     renderer.render(scene, camera);
+  }
+
+  // --- HELPERS MATEMÁTICOS Y GRÁFICOS ---
+  function roundRect(ctx, x, y, w, h, r, fill, stroke) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+    if (fill) ctx.fill();
+    if (stroke) ctx.stroke();
+  }
+
+  function create5PointStarShape(rOuter, rInner) {
+    const shape = new THREE.Shape();
+    const points = 5;
+    for (let i = 0; i < points * 2; i++) {
+      const r = (i % 2 === 0) ? rOuter : rInner;
+      const a = (i / (points * 2)) * Math.PI * 2 - Math.PI / 2;
+      const x = Math.cos(a) * r;
+      const y = Math.sin(a) * r;
+      if (i === 0) shape.moveTo(x, y);
+      else shape.lineTo(x, y);
+    }
+    shape.closePath();
+    return shape;
   }
 
   // Iniciar cuando el DOM esté listo
