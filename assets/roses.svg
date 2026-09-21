@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 700" width="100%" height="100%">
+  <defs>
+    <radialGradient id="haloR" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#fff176" stop-opacity="0.55" />
+      <stop offset="65%" stop-color="#fbc02d" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#f57f17" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="roseP1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff59d" />
+      <stop offset="50%" stop-color="#ffd54f" />
+      <stop offset="100%" stop-color="#ffa000" />
+    </linearGradient>
+    <linearGradient id="roseP2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffecb3" />
+      <stop offset="50%" stop-color="#ffca28" />
+      <stop offset="100%" stop-color="#ff8f00" />
+    </linearGradient>
+    <linearGradient id="ribbonG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#81c784" />
+      <stop offset="50%" stop-color="#c8e6c9" />
+      <stop offset="100%" stop-color="#4caf50" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="275" cy="270" r="250" fill="url(#haloR)" />
+
+  <g stroke="#2e7d32" stroke-width="10" stroke-linecap="round">
+    <line x1="260" y1="360" x2="235" y2="630" />
+    <line x1="275" y1="360" x2="270" y2="640" />
+    <line x1="290" y1="360" x2="310" y2="630" />
+  </g>
+
+  <!-- Leaves around -->
+  <g fill="#388e3c">
+    <path d="M150 200 C80 180 110 110 180 150 Z" />
+    <path d="M400 200 C470 180 440 110 370 150 Z" />
+    <path d="M140 330 C70 340 80 410 150 380 Z" />
+    <path d="M410 330 C480 340 470 410 400 380 Z" />
+  </g>
+
+  <!-- Big Rose bunch -->
+<g transform="translate(200, 180) scale(0.85)">
+  <circle cx="0" cy="0" r="55" fill="url(#roseP2)" />
+  <path d="M-45 -15 C-55 -40 0 -60 30 -50 C60 -40 50 -10 35 15 C20 40 -30 50 -45 -15 Z" fill="url(#roseP1)" opacity="0.9" />
+  <path d="M-30 25 C0 55 45 40 45 10 C45 -20 15 -35 -15 -30 C-45 -25 -50 0 -30 25 Z" fill="url(#roseP2)" opacity="0.85" />
+  <path d="M-20 -20 C10 -35 30 -15 25 15 C20 40 -15 35 -20 10 Z" fill="url(#roseP1)" />
+  <path d="M-10 5 C5 20 20 5 15 -10 C10 -25 -5 -15 -10 5 Z" fill="#ff8f00" opacity="0.8" />
+</g>
+<g transform="translate(350, 180) scale(0.85)">
+  <circle cx="0" cy="0" r="55" fill="url(#roseP2)" />
+  <path d="M-45 -15 C-55 -40 0 -60 30 -50 C60 -40 50 -10 35 15 C20 40 -30 50 -45 -15 Z" fill="url(#roseP1)" opacity="0.9" />
+  <path d="M-30 25 C0 55 45 40 45 10 C45 -20 15 -35 -15 -30 C-45 -25 -50 0 -30 25 Z" fill="url(#roseP2)" opacity="0.85" />
+  <path d="M-20 -20 C10 -35 30 -15 25 15 C20 40 -15 35 -20 10 Z" fill="url(#roseP1)" />
+  <path d="M-10 5 C5 20 20 5 15 -10 C10 -25 -5 -15 -10 5 Z" fill="#ff8f00" opacity="0.8" />
+</g>
+<g transform="translate(275, 140) scale(0.9)">
+  <circle cx="0" cy="0" r="55" fill="url(#roseP2)" />
+  <path d="M-45 -15 C-55 -40 0 -60 30 -50 C60 -40 50 -10 35 15 C20 40 -30 50 -45 -15 Z" fill="url(#roseP1)" opacity="0.9" />
+  <path d="M-30 25 C0 55 45 40 45 10 C45 -20 15 -35 -15 -30 C-45 -25 -50 0 -30 25 Z" fill="url(#roseP2)" opacity="0.85" />
+  <path d="M-20 -20 C10 -35 30 -15 25 15 C20 40 -15 35 -20 10 Z" fill="url(#roseP1)" />
+  <path d="M-10 5 C5 20 20 5 15 -10 C10 -25 -5 -15 -10 5 Z" fill="#ff8f00" opacity="0.8" />
+</g>
+<g transform="translate(170, 280) scale(0.95)">
+  <circle cx="0" cy="0" r="55" fill="url(#roseP2)" />
+  <path d="M-45 -15 C-55 -40 0 -60 30 -50 C60 -40 50 -10 35 15 C20 40 -30 50 -45 -15 Z" fill="url(#roseP1)" opacity="0.9" />
+  <path d="M-30 25 C0 55 45 40 45 10 C45 -20 15 -35 -15 -30 C-45 -25 -50 0 -30 25 Z" fill="url(#roseP2)" opacity="0.85" />
+  <path d="M-20 -20 C10 -35 30 -15 25 15 C20 40 -15 35 -20 10 Z" fill="url(#roseP1)" />
+  <path d="M-10 5 C5 20 20 5 15 -10 C10 -25 -5 -15 -10 5 Z" fill="#ff8f00" opacity="0.8" />
+</g>
+<g transform="translate(380, 280) scale(0.95)">
+  <circle cx="0" cy="0" r="55" fill="url(#roseP2)" />
+  <path d="M-45 -15 C-55 -40 0 -60 30 -50 C60 -40 50 -10 35 15 C20 40 -30 50 -45 -15 Z" fill="url(#roseP1)" opacity="0.9" />
+  <path d="M-30 25 C0 55 45 40 45 10 C45 -20 15 -35 -15 -30 C-45 -25 -50 0 -30 25 Z" fill="url(#roseP2)" opacity="0.85" />
+  <path d="M-20 -20 C10 -35 30 -15 25 15 C20 40 -15 35 -20 10 Z" fill="url(#roseP1)" />
+  <path d="M-10 5 C5 20 20 5 15 -10 C10 -25 -5 -15 -10 5 Z" fill="#ff8f00" opacity="0.8" />
+</g>
+<g transform="translate(240, 250) scale(1.0)">
+  <circle cx="0" cy="0" r="55" fill="url(#roseP2)" />
+  <path d="M-45 -15 C-55 -40 0 -60 30 -50 C60 -40 50 -10 35 15 C20 40 -30 50 -45 -15 Z" fill="url(#roseP1)" opacity="0.9" />
+  <path d="M-30 25 C0 55 45 40 45 10 C45 -20 15 -35 -15 -30 C-45 -25 -50 0 -30 25 Z" fill="url(#roseP2)" opacity="0.85" />
+  <path d="M-20 -20 C10 -35 30 -15 25 15 C20 40 -15 35 -20 10 Z" fill="url(#roseP1)" />
+  <path d="M-10 5 C5 20 20 5 15 -10 C10 -25 -5 -15 -10 5 Z" fill="#ff8f00" opacity="0.8" />
+</g>
+<g transform="translate(310, 250) scale(1.0)">
+  <circle cx="0" cy="0" r="55" fill="url(#roseP2)" />
+  <path d="M-45 -15 C-55 -40 0 -60 30 -50 C60 -40 50 -10 35 15 C20 40 -30 50 -45 -15 Z" fill="url(#roseP1)" opacity="0.9" />
+  <path d="M-30 25 C0 55 45 40 45 10 C45 -20 15 -35 -15 -30 C-45 -25 -50 0 -30 25 Z" fill="url(#roseP2)" opacity="0.85" />
+  <path d="M-20 -20 C10 -35 30 -15 25 15 C20 40 -15 35 -20 10 Z" fill="url(#roseP1)" />
+  <path d="M-10 5 C5 20 20 5 15 -10 C10 -25 -5 -15 -10 5 Z" fill="#ff8f00" opacity="0.8" />
+</g>
+<g transform="translate(275, 340) scale(1.05)">
+  <circle cx="0" cy="0" r="55" fill="url(#roseP2)" />
+  <path d="M-45 -15 C-55 -40 0 -60 30 -50 C60 -40 50 -10 35 15 C20 40 -30 50 -45 -15 Z" fill="url(#roseP1)" opacity="0.9" />
+  <path d="M-30 25 C0 55 45 40 45 10 C45 -20 15 -35 -15 -30 C-45 -25 -50 0 -30 25 Z" fill="url(#roseP2)" opacity="0.85" />
+  <path d="M-20 -20 C10 -35 30 -15 25 15 C20 40 -15 35 -20 10 Z" fill="url(#roseP1)" />
+  <path d="M-10 5 C5 20 20 5 15 -10 C10 -25 -5 -15 -10 5 Z" fill="#ff8f00" opacity="0.8" />
+</g>
+
+  <g transform="translate(275, 520)">
+    <path d="M-35 -10 Q0 -5 35 -10 Q32 15 30 22 Q0 15 -30 22 Z" fill="url(#ribbonG)" stroke="#2e7d32" stroke-width="1.5" />
+    <path d="M-8 0 C-35 -15 -45 10 -20 12 C-10 13 -6 5 -8 0 Z" fill="url(#ribbonG)" />
+    <path d="M8 0 C35 -15 45 10 20 12 C10 13 6 5 8 0 Z" fill="url(#ribbonG)" />
+    <circle cx="0" cy="5" r="6" fill="#a5d6a7" />
+  </g>
+</svg>

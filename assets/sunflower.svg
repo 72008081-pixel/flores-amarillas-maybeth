@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="100%" height="100%">
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="32%" r="50%">
+      <stop offset="0%" stop-color="#ffe57f" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#ffb300" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#ff8f00" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2e7d32" />
+      <stop offset="50%" stop-color="#4caf50" />
+      <stop offset="100%" stop-color="#1b5e20" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#81c784" />
+      <stop offset="50%" stop-color="#43a047" />
+      <stop offset="100%" stop-color="#1b5e20" />
+    </linearGradient>
+    <linearGradient id="petalGrad1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ff8f00" />
+      <stop offset="50%" stop-color="#ffc107" />
+      <stop offset="100%" stop-color="#fff59d" />
+    </linearGradient>
+    <linearGradient id="petalGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#e65100" />
+      <stop offset="60%" stop-color="#ffa000" />
+      <stop offset="100%" stop-color="#ffee58" />
+    </linearGradient>
+    <radialGradient id="centerGrad" cx="42%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#5d4037" />
+      <stop offset="55%" stop-color="#3e2723" />
+      <stop offset="85%" stop-color="#ff8f00" />
+      <stop offset="100%" stop-color="#271202" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="250" cy="210" r="210" fill="url(#halo)" />
+
+  <path d="M250 230 Q240 430 255 610" stroke="url(#stemGrad)" stroke-width="18" stroke-linecap="round" fill="none" />
+
+  <path d="M246 390 C160 380 90 310 110 240 C170 260 225 330 246 390 Z" fill="url(#leafGrad)" />
+  <path d="M246 390 Q170 310 110 240" stroke="#a5d6a7" stroke-width="2.5" fill="none" />
+
+  <path d="M254 460 C340 440 400 370 380 290 C320 320 275 390 254 460 Z" fill="url(#leafGrad)" />
+  <path d="M254 460 Q330 380 380 290" stroke="#a5d6a7" stroke-width="2.5" fill="none" />
+
+  <g transform="translate(250, 210)">
+    <g>
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(0)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(15)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(30)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(45)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(60)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(75)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(90)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(105)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(120)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(135)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(150)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(165)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(180)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(195)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(210)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(225)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(240)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(255)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(270)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(285)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(300)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(315)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(330)" />
+      <path d="M -16 0 C -24 -65 0 -150 0 -165 C 0 -150 24 -65 16 0 Z" fill="url(#petalGrad2)" transform="rotate(345)" />
+    </g>
+    <g>
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(7.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(22.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(37.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(52.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(67.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(82.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(97.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(112.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(127.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(142.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(157.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(172.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(187.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(202.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(217.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(232.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(247.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(262.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(277.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(292.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(307.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(322.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(337.5)" />
+      <path d="M -14 0 C -20 -60 0 -140 0 -155 C 0 -140 20 -60 14 0 Z" fill="url(#petalGrad1)" transform="rotate(352.5)" />
+    </g>
+    <circle cx="0" cy="0" r="68" fill="url(#centerGrad)" />
+    <circle cx="0" cy="0" r="64" stroke="#ffd54f" stroke-dasharray="3,5" stroke-width="2" fill="none" opacity="0.6" />
+    <circle cx="0" cy="0" r="52" stroke="#ffb300" stroke-dasharray="4,6" stroke-width="2.5" fill="none" opacity="0.7" />
+    <circle cx="0" cy="0" r="38" stroke="#ffa000" stroke-dasharray="3,5" stroke-width="2" fill="none" opacity="0.8" />
+    <circle cx="0" cy="0" r="24" stroke="#ff8f00" stroke-dasharray="2,4" stroke-width="2" fill="none" opacity="0.9" />
+    <circle cx="0" cy="0" r="12" fill="#1b0000" />
+  </g>
+</svg>

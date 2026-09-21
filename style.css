@@ -1,0 +1,461 @@
+/* ==========================================================================
+   FLORES AMARILLAS PARA MAYBETH - STYLESHEET
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+:root {
+  --primary-gold: #ffd700;
+  --secondary-amber: #ffb300;
+  --warm-yellow: #fff59d;
+  --glow-color: rgba(255, 215, 0, 0.75);
+  --pink-accent: #ff80ab;
+  --dark-bg: #030206;
+  --card-bg: rgba(18, 12, 28, 0.88);
+  --card-border: rgba(255, 215, 0, 0.35);
+  --card-glow: 0 0 35px rgba(255, 179, 0, 0.3), inset 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--dark-bg);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ==========================================================================
+   CANVAS CONTAINER
+   ========================================================================== */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  cursor: grab;
+}
+
+#canvas-container:active {
+  cursor: grabbing;
+}
+
+/* ==========================================================================
+   INTRO SCREEN (PANTALLA "TOCA PARA INICIAR")
+   ========================================================================== */
+#intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #150d24 0%, #06030c 60%, #020104 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
+}
+
+#intro-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-sunflower-wrapper {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.intro-sunflower-aura {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.45) 0%, rgba(255, 179, 0, 0.2) 45%, transparent 75%);
+  animation: pulse-aura 3s ease-in-out infinite;
+  filter: blur(10px);
+}
+
+.intro-sunflower-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  animation: float-intro 3.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+.intro-text {
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: #fff9c4;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 160, 0, 0.6);
+  letter-spacing: 1px;
+  animation: pulse-text 2s ease-in-out infinite;
+  text-align: center;
+}
+
+.intro-subtext {
+  margin-top: 12px;
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  color: #ffe082;
+  opacity: 0.85;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ==========================================================================
+   UI OVERLAY (TOP HEADER & CONTROLS)
+   ========================================================================== */
+#ui-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 30px;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title {
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #fffde7;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.9), 0 0 25px rgba(255, 143, 0, 0.7);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-emoji {
+  display: inline-block;
+  animation: gentle-sway 3s ease-in-out infinite;
+}
+
+.sub-title {
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  color: #ffd54f;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0.9;
+  text-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
+}
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ctrl-btn {
+  background: rgba(25, 16, 38, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  color: #ffe082;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
+.ctrl-btn:hover {
+  background: rgba(45, 28, 70, 0.85);
+  border-color: var(--primary-gold);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.music-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 14px;
+}
+
+.music-bar {
+  width: 3px;
+  background-color: var(--primary-gold);
+  border-radius: 2px;
+  animation: sound-bounce 1.2s ease-in-out infinite alternate;
+}
+
+.music-bar:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+.music-bar:nth-child(2) { height: 14px; animation-delay: 0.3s; }
+.music-bar:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+.music-bar:nth-child(4) { height: 8px; animation-delay: 0.4s; }
+
+.paused .music-bar {
+  animation: none;
+  height: 4px;
+  opacity: 0.5;
+}
+
+/* Bottom Instruction Banner */
+.bottom-banner {
+  align-self: center;
+  background: rgba(18, 10, 28, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  padding: 10px 24px;
+  border-radius: 30px;
+  color: #fff9c4;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  letter-spacing: 1px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+  transition: opacity 0.8s;
+  animation: float-banner 4s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   ROMANTIC FLOWER MODAL (GLASSMORPHISM POPUP CARD)
+   ========================================================================== */
+#flower-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(2, 1, 5, 0.75);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+}
+
+#flower-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  box-shadow: var(--card-glow);
+  border-radius: 28px;
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+#flower-modal.active .modal-card {
+  transform: scale(1) translateY(0);
+}
+
+/* Top little floating sunflower badge */
+.modal-badge {
+  position: absolute;
+  top: 14px;
+  font-size: 1.4rem;
+  animation: gentle-sway 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+}
+
+.modal-img-container {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(25, 15, 40, 0.6) 70%, transparent 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(255, 193, 7, 0.6));
+  animation: float-intro 4s ease-in-out infinite;
+}
+
+.modal-title {
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(255, 215, 0, 0.9), 0 0 25px rgba(255, 160, 0, 0.5);
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.modal-desc {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2.5vw, 1.12rem);
+  line-height: 1.65;
+  color: #ede7f6;
+  margin-bottom: 26px;
+  padding: 0 10px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: 1.5px solid rgba(255, 215, 0, 0.6);
+  color: #fff9c4;
+  padding: 10px 42px;
+  border-radius: 30px;
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: #ffd700;
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+@keyframes pulse-aura {
+  0%, 100% { transform: scale(0.95); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 0.95; }
+}
+
+@keyframes pulse-text {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.04); opacity: 1; text-shadow: 0 0 25px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 179, 0, 0.8); }
+}
+
+@keyframes float-intro {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes gentle-sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes sound-bounce {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+@keyframes float-banner {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 600px) {
+  #ui-overlay {
+    padding: 14px 16px;
+  }
+  
+  .main-title {
+    font-size: 1.55rem;
+  }
+
+  .sub-title {
+    font-size: 0.72rem;
+  }
+
+  .ctrl-btn {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+
+  .modal-card {
+    max-width: 92vw;
+    padding: 24px 16px 20px;
+    border-radius: 22px;
+  }
+
+  .modal-img-container {
+    height: 160px;
+    margin-bottom: 12px;
+  }
+
+  .modal-title {
+    font-size: 1.65rem;
+    margin-bottom: 8px;
+  }
+
+  .modal-desc {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-bottom: 18px;
+    padding: 0 4px;
+  }
+
+  .modal-close-btn {
+    padding: 8px 34px;
+    font-size: 1.3rem;
+  }
+}

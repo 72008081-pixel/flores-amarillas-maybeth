@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Feliz Día de las Flores Amarillas • Maybeth 🌻</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌻</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CONTENEDOR THREE.JS 3D CANVAS -->
+  <div id="canvas-container"></div>
+
+  <!-- PANTALLA DE INICIO INTERACTIVA ("Toca para iniciar") -->
+  <div id="intro-screen">
+    <div class="intro-sunflower-wrapper">
+      <div class="intro-sunflower-aura"></div>
+      <img src="assets/sunflower_sprite.png" alt="Girasol" class="intro-sunflower-img" id="intro-flower-img">
+    </div>
+    <div class="intro-text">Toca para iniciar 🌻</div>
+    <div class="intro-subtext">Una sorpresa para Maybeth</div>
+  </div>
+
+  <!-- INTERFAZ SUPERIOR (ENCABEZADO Y CONTROLES) -->
+  <div id="ui-overlay">
+    <header class="header-bar">
+      <div class="title-container">
+        <h1 class="main-title">
+          Feliz Día de las Flores Amarillas <span class="title-emoji">🌻</span>
+        </h1>
+        <div class="sub-title">Para la persona más especial • Maybeth 💛</div>
+      </div>
+
+      <div class="controls-group">
+        <button id="btn-audio" class="ctrl-btn" title="Música de fondo">
+          <div class="music-bars" id="music-bars">
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+          </div>
+          <span id="audio-status-text">Música</span>
+        </button>
+
+        <button id="btn-reset-cam" class="ctrl-btn" title="Restablecer vista">
+          <span>🌌</span>
+          <span>Centrar</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- GUÍA INFERIOR -->
+    <div class="bottom-banner" id="bottom-banner">
+      ✨ Arrastra para girar la galaxia • Haz clic en cada flor para leer tu mensaje ✨
+    </div>
+  </div>
+
+  <!-- MODAL ROMÁNTICO EMERGENTE (GLASSMORPHISM POPUP) -->
+  <div id="flower-modal">
+    <div class="modal-card">
+      <div class="modal-badge">🌻</div>
+      <div class="modal-img-container">
+        <img id="modal-flower-img" class="modal-img" src="assets/sunflower.svg" alt="Flor Amarilla">
+      </div>
+      <h2 id="modal-flower-title" class="modal-title">Gracias por quedarte</h2>
+      <p id="modal-flower-desc" class="modal-desc">
+        No todos se quedan cuando las cosas no son perfectas. Tú sí. Y eso, para mí, vale más que mil palabras bonitas. Te amo, Maybeth.
+      </p>
+      <button id="modal-close-btn" class="modal-close-btn">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- PISTA DE AUDIO ORIGINAL EXTRAÍDA DEL VIDEO -->
+  <audio id="bg-music" src="musica.mp3" preload="auto" loop></audio>
+
+  <!-- SCRIPTS (THREE.JS Y ORBITCONTROLS LOCALES CON FALLBACK A CDN) -->
+  <script src="three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+  <script src="OrbitControls.js"></script>
+  <script>
+    if (typeof THREE.OrbitControls === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"><\/script>');
+    }
+  </script>
+
+  <!-- LÓGICA PRINCIPAL DEL UNIVERSO INTERACTIVO -->
+  <script src="script.js"></script>
+</body>
+</html>
