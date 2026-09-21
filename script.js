@@ -282,12 +282,16 @@
   let isStarted = false;
   let textureLoader = new THREE.TextureLoader();
 
-  // Intro épica de 6.5 segundos
+  // Intro épica de dos fases (hiperespacio a la velocidad de la luz + formación galáctica)
   let isIntroAnimating = false;
   let introStartTime = 0;
-  const INTRO_DURATION = 6500;
+  const INTRO_DURATION = 6800; // ~6.8 segundos
   let galaxyStartPos = [];
   let galaxyTargetPos = [];
+  let warpGroup = null;
+  let warpStarsMesh = null;
+  let warpFlowers = [];
+  let warpRings = [];
 
   // Sistema de progreso
   const openedNotes = new Set();
@@ -324,6 +328,11 @@
   function init() {
     const container = document.getElementById('canvas-container');
 
+    // Pre-cargar audio inmediatamente para que esté listo al instante
+    if (bgMusic) {
+      bgMusic.load();
+    }
+
     scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0x020106, 0.0011);
 
@@ -331,8 +340,7 @@
 
     const aspect = window.innerWidth / window.innerHeight;
     camera = new THREE.PerspectiveCamera(55, aspect, 0.5, 3500);
-    // Posición inicial de la cámara para la intro (alta y majestuosa)
-    camera.position.set(0, 180, 50);
+    camera.position.set(0, 0, 180);
 
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -347,7 +355,6 @@
     controls.autoRotate = false;
     controls.autoRotateSpeed = 0.45;
     controls.maxDistance = 550;
-    // Permite acercarse muchísimo más (de 35 a 8) para ver cada detalle
     controls.minDistance = 8;
     controls.target.set(0, 0, 0);
 
@@ -376,7 +383,7 @@
     cosmicLight.position.set(0, -30, -140);
     universeGroup.add(cosmicLight);
 
-    // Construcción de la galaxia
+    // Construcción del universo
     createStarfield();
     createDeepSpaceNebulae();
     createSpiralGalaxy();
@@ -386,6 +393,9 @@
     createCentralMaybeth();
     createInteractiveOrbitingFlowers();
     createMeteors();
+
+    // Motor de hiperespacio con flores y frases
+    createHyperspaceEngine();
 
     // Event Listeners y Audio
     setupEventListeners();
@@ -398,6 +408,9 @@
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('autostart') === '1') {
       if (introScreen) introScreen.style.display = 'none';
+      if (warpGroup) warpGroup.visible = false;
+      universeGroup.position.set(0, 0, 0);
+      universeGroup.scale.set(1, 1, 1);
       camera.position.set(0, 52, 135);
       controls.target.set(0, 0, 0);
       controls.autoRotate = true;
@@ -405,6 +418,9 @@
     }
     if (urlParams.get('bloom') === '1') {
       if (introScreen) introScreen.style.display = 'none';
+      if (warpGroup) warpGroup.visible = false;
+      universeGroup.position.set(0, 0, 0);
+      universeGroup.scale.set(1, 1, 1);
       camera.position.set(0, 52, 135);
       controls.target.set(0, 0, 0);
       controls.autoRotate = true;
@@ -421,10 +437,22 @@
     }
     if (urlParams.get('photo') === '1') {
       if (introScreen) introScreen.style.display = 'none';
+      if (warpGroup) warpGroup.visible = false;
+      universeGroup.position.set(0, 0, 0);
+      universeGroup.scale.set(1, 1, 1);
       camera.position.set(0, 52, 135);
       controls.target.set(0, 0, 0);
       isStarted = true;
       openPhotoModal();
+    }
+    if (urlParams.get('warptest') === '1') {
+      if (introScreen) introScreen.style.display = 'none';
+      if (warpGroup) warpGroup.visible = true;
+      camera.position.set(0, 0, 180);
+      camera.lookAt(0, 0, -400);
+      isStarted = true;
+      isIntroAnimating = true;
+      introStartTime = performance.now() - 1500;
     }
   }
 
@@ -510,7 +538,7 @@
     });
   }
 
-  // --- GALAXIA ESPIRAL FORMÁNDOSE EN ESPIRAL ---
+  // --- GALAXIA ESPIRAL CON POSICIONES DE FORMACIÓN EN ESPIRAL ---
   function createSpiralGalaxy() {
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(GALAXY_PARAMS.count * 3);
@@ -541,14 +569,14 @@
       galaxyTargetPos[i3 + 1] = finalY;
       galaxyTargetPos[i3 + 2] = finalZ;
 
-      // Posición de inicio para la formación: nube expansiva que colapsa en espiral
+      // Nube expansiva inicial en forma de vórtice
       const expandR = radius * 3.6 + 60;
       const startAngle = branchAngle + spinAngle + 3.8 * Math.PI;
       galaxyStartPos[i3] = Math.cos(startAngle) * expandR + (Math.random() - 0.5) * 60;
       galaxyStartPos[i3 + 1] = randomY * 4.5 + (Math.random() - 0.5) * 80;
       galaxyStartPos[i3 + 2] = Math.sin(startAngle) * expandR + (Math.random() - 0.5) * 60;
 
-      // Posición inicial actual
+      // Posición inicial
       positions[i3] = galaxyStartPos[i3];
       positions[i3 + 1] = galaxyStartPos[i3 + 1];
       positions[i3 + 2] = galaxyStartPos[i3 + 2];
@@ -601,10 +629,179 @@
     universeGroup.add(accretionMesh);
   }
 
+  // --- MOTOR DE HIPERESPACIO CON FLORES Y FRASES A TODA VELOCIDAD ---
+  function createHyperspaceEngine() {
+    warpGroup = new THREE.Group();
+    warpGroup.visible = false;
+    scene.add(warpGroup);
+
+    // 1. Estrellas de hiperespacio (2,200 partículas alargadas)
+    const starCount = 2200;
+    const pGeo = new THREE.BufferGeometry();
+    const pos = new Float32Array(starCount * 3);
+    const col = new Float32Array(starCount * 3);
+    const starData = [];
+
+    for (let i = 0; i < starCount; i++) {
+      const radius = 3 + Math.random() * 85;
+      const angle = Math.random() * Math.PI * 2;
+      const x = Math.cos(angle) * radius;
+      const y = Math.sin(angle) * radius;
+      const z = -450 + Math.random() * 650;
+
+      pos[i * 3] = x;
+      pos[i * 3 + 1] = y;
+      pos[i * 3 + 2] = z;
+
+      const isGold = Math.random() > 0.35;
+      col[i * 3] = 1.0;
+      col[i * 3 + 1] = isGold ? 0.9 : 1.0;
+      col[i * 3 + 2] = isGold ? 0.35 : 1.0;
+
+      starData.push({ x, y, z, speed: 520 + Math.random() * 550, radius, angle });
+    }
+
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    pGeo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+
+    const pTex = textureLoader.load('assets/particle.png');
+    const pMat = new THREE.PointsMaterial({
+      size: 14.0,
+      sizeAttenuation: true,
+      map: pTex,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.95,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    warpStarsMesh = new THREE.Points(pGeo, pMat);
+    warpStarsMesh.userData = { starData: starData };
+    warpGroup.add(warpStarsMesh);
+
+    // 2. Anillos de luz de hiperespacio
+    warpRings = [];
+    const ringMat = new THREE.MeshBasicMaterial({
+      color: 0xffd54f,
+      transparent: true,
+      opacity: 0.55,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide
+    });
+    const ringGeo = new THREE.TorusGeometry(32, 1.2, 12, 36);
+
+    for (let i = 0; i < 14; i++) {
+      const ring = new THREE.Mesh(ringGeo, ringMat);
+      ring.position.set(0, 0, -450 + i * 50);
+      warpGroup.add(ring);
+      warpRings.push(ring);
+    }
+
+    // 3. Flores a la velocidad de la luz con frases de amor flotando alrededor ("fuaaaa")
+    warpFlowers = [];
+    const flowerSprites = [
+      'assets/sprite_sunflower.png',
+      'assets/sprite_bouquet.png',
+      'assets/sprite_roses.png',
+      'assets/sprite_daisy.png'
+    ];
+
+    const warpPhrases = [
+      '¡Te amo! 💛',
+      '¡Te quiero! ✨',
+      '¡Te extraño! 💕',
+      '¡Eres la mejor! 🌟',
+      '¡Mi vida! 💖',
+      '¡Meycita bella! 🌻',
+      '¡Mi amorshote! 🥰',
+      '¡Eres mi todo! 💫',
+      '¡Siempre juntos! 💛',
+      '¡Mi Cuchi Cuchi! 💖',
+      '¡Mi princesita! 👑',
+      '¡Mi niña hermosa! ✨',
+      '¡Te adoro! 💛',
+      '¡Mi sol de siempre! ☀️',
+      '¡Mi niña guapa! 💕',
+      '¡Te amodoro con locura! 🥰'
+    ];
+
+    const warpFlowerCount = 36;
+    for (let i = 0; i < warpFlowerCount; i++) {
+      const flowerSubGroup = new THREE.Group();
+
+      const sprPath = flowerSprites[i % flowerSprites.length];
+      const fTex = textureLoader.load(sprPath);
+      const fMat = new THREE.SpriteMaterial({
+        map: fTex,
+        transparent: true,
+        depthWrite: false
+      });
+      const fSprite = new THREE.Sprite(fMat);
+      const sz = 13 + Math.random() * 15;
+      fSprite.scale.set(sz, sz, 1);
+      flowerSubGroup.add(fSprite);
+
+      // Frase brillante flotante debajo de cada flor
+      const phrase = warpPhrases[i % warpPhrases.length];
+      const pCanvas = document.createElement('canvas');
+      pCanvas.width = 512;
+      pCanvas.height = 128;
+      const pCtx = pCanvas.getContext('2d');
+      pCtx.clearRect(0, 0, 512, 128);
+
+      pCtx.shadowColor = '#ffd700';
+      pCtx.shadowBlur = 20;
+      pCtx.font = 'bold 44px "Caveat", "Dancing Script", cursive';
+      pCtx.textAlign = 'center';
+      pCtx.textBaseline = 'middle';
+
+      const pGrad = pCtx.createLinearGradient(0, 20, 0, 108);
+      pGrad.addColorStop(0, '#ffffff');
+      pGrad.addColorStop(0.4, '#fff9c4');
+      pGrad.addColorStop(1, '#ffab00');
+      pCtx.fillStyle = pGrad;
+      pCtx.fillText(phrase, 256, 64);
+
+      const pLabelTex = new THREE.CanvasTexture(pCanvas);
+      const pLabelMat = new THREE.SpriteMaterial({
+        map: pLabelTex,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      });
+      const pLabelSprite = new THREE.Sprite(pLabelMat);
+      pLabelSprite.scale.set(24, 6, 1);
+      pLabelSprite.position.set(0, -sz * 0.6 - 2, 0);
+      flowerSubGroup.add(pLabelSprite);
+
+      const rad = 6 + Math.random() * 50;
+      const ang = Math.random() * Math.PI * 2;
+      const fx = Math.cos(ang) * rad;
+      const fy = Math.sin(ang) * rad;
+      const fz = -450 + (i / warpFlowerCount) * 650;
+
+      flowerSubGroup.position.set(fx, fy, fz);
+      warpGroup.add(flowerSubGroup);
+
+      warpFlowers.push({
+        group: flowerSubGroup,
+        flowerSprite: fSprite,
+        labelSprite: pLabelSprite,
+        x: fx,
+        y: fy,
+        z: fz,
+        speed: 460 + Math.random() * 460,
+        rotSpeed: (Math.random() - 0.5) * 6.5,
+        radius: rad,
+        angle: ang
+      });
+    }
+  }
+
   // --- GRAN CORAZÓN CELESTIAL DE PARTÍCULAS DORADAS (EN LO ALTO DEL CIELO) ---
   function createCelestialParticleHeart() {
     celestialHeartGroup = new THREE.Group();
-    // Ubicado majestuosamente en el cielo cósmico arriba de Maybeth
     celestialHeartGroup.position.set(0, 32, -35);
 
     const heartParticleCount = 4200;
@@ -618,11 +815,9 @@
 
     for (let i = 0; i < heartParticleCount; i++) {
       const t = Math.random() * Math.PI * 2;
-      // Ecuación paramétrica de corazón 3D
       let x = 16 * Math.pow(Math.sin(t), 3);
       let y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
 
-      // Partículas interiores y de contorno
       const isPerimeter = i < heartParticleCount * 0.55;
       const factor = isPerimeter ? 1.0 + (Math.random() - 0.5) * 0.08 : Math.sqrt(Math.random());
       x *= factor * 1.35;
@@ -633,7 +828,6 @@
       hPos[i * 3 + 1] = y;
       hPos[i * 3 + 2] = z;
 
-      // Colores dorados y rosados cálidos
       const mixC = colorGold.clone();
       if (Math.random() > 0.65) {
         mixC.lerp(colorPink, 0.7);
@@ -663,20 +857,18 @@
     const heartPoints = new THREE.Points(hGeo, hMat);
     celestialHeartGroup.add(heartPoints);
 
-    // Texto sutil dentro del corazón
     const hLabel = createTextLabelSprite('Te amo infinito 💛');
     hLabel.position.set(0, -1, 2);
     hLabel.scale.set(24, 6, 1);
     celestialHeartGroup.add(hLabel);
 
-    celestialHeartGroup.scale.set(0.001, 0.001, 0.001); // Comienza invisible para intro
+    celestialHeartGroup.scale.set(0.001, 0.001, 0.001);
     universeGroup.add(celestialHeartGroup);
   }
 
   // --- NOMBRE CELESTIAL DE VAYOLETT (SOLAMENTE EL NOMBRE ARRIBA CON ESTRELLITAS) ---
   function createVayolettCelestialSign() {
     vayolettSignGroup = new THREE.Group();
-    // Ubicado en lo más alto del firmamento cósmico (z = -75, y = 52)
     vayolettSignGroup.position.set(0, 52, -75);
 
     const bannerCanvas = document.createElement('canvas');
@@ -716,7 +908,6 @@
     bannerSprite.scale.set(44, 11, 1);
     vayolettSignGroup.add(bannerSprite);
 
-    // Estrellas 3D doradas orbitando el letrero
     const starShape = create5PointStarShape(2.2, 1.0);
     const starGeo = new THREE.ExtrudeGeometry(starShape, {
       depth: 0.5,
@@ -741,7 +932,6 @@
     starR.position.set(25, 0, 1.5);
     vayolettSignGroup.add(starR);
 
-    // Hitbox para clic en Vayolett
     bannerSprite.userData = {
       isVayolett: true,
       title: '★ VAYOLETT ★',
@@ -765,7 +955,6 @@
     canvas.height = 512;
     const ctx = canvas.getContext('2d');
 
-    // Fondo degradado de terciopelo marrón cálido
     const grad = ctx.createRadialGradient(256, 256, 20, 256, 256, 256);
     grad.addColorStop(0, '#241005');
     grad.addColorStop(0.5, '#3b1c08');
@@ -774,7 +963,6 @@
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, 512, 512);
 
-    // Semillas espiral Fibonacci
     const goldenAngle = 2.3999632;
     const totalSeeds = 400;
     for (let i = 0; i < totalSeeds; i++) {
@@ -794,7 +982,6 @@
     }
     ctx.globalAlpha = 1.0;
 
-    // Anillo exterior brillante
     const ringGrad = ctx.createRadialGradient(256, 256, 205, 256, 256, 256);
     ringGrad.addColorStop(0, 'rgba(245, 158, 11, 0)');
     ringGrad.addColorStop(0.7, 'rgba(217, 119, 6, 0.5)');
@@ -804,21 +991,7 @@
     ctx.arc(256, 256, 256, 0, Math.PI * 2);
     ctx.fill();
 
-    // EN EL MEDIO: CORAZÓN ROJO CON LA "M" (PEDIDO POR EL USUARIO)
-    ctx.save();
-    ctx.translate(256, 256);
-
-    // Dibujar corazón rojo brillante
-    ctx.shadowColor = '#ff1744';
-    ctx.shadowBlur = 25;
-    ctx.fillStyle = '#d50000';
-    ctx.beginPath();
-    ctx.moveTo(0, 20);
-    ctx.bezierCurveTo(-50, -35, -70, -85, 0, -115);
-    ctx.bezierCurveTo(70, -85, 50, -35, 0, 20);
-    // Invertir para orientación estándar
-    ctx.restore();
-
+    // EN EL MEDIO: CORAZÓN ROJO CON LA "M"
     ctx.save();
     ctx.translate(256, 240);
     ctx.shadowColor = '#ff1744';
@@ -832,12 +1005,10 @@
     ctx.bezierCurveTo(-65, -50, -45, -5, 0, 35);
     ctx.fill();
 
-    // Borde dorado alrededor del corazón
     ctx.strokeStyle = '#ffd700';
     ctx.lineWidth = 3.5;
     ctx.stroke();
 
-    // Letra "M" en el medio del corazón
     ctx.shadowColor = '#ffd700';
     ctx.shadowBlur = 12;
     ctx.fillStyle = '#ffffff';
@@ -855,7 +1026,6 @@
   // --- GIRASOL 3D GRANDOTE EN EL CENTRO (SIN ATRAVESAR NI TAPAR A MAYBETH) ---
   function createCenterSunflower3D() {
     centerSunflower3D = new THREE.Group();
-    // Ubicado en (0, -6, 20), floreciendo debajo y al frente de MAYBETH sin tapar su texto
     centerSunflower3D.position.set(0, -6, 20);
 
     const stemMat = new THREE.MeshStandardMaterial({
@@ -886,7 +1056,7 @@
       emissiveIntensity: 0.35
     });
 
-    // 1. Tallo 3D colocado detrás (z = -1.2) para que NUNCA atraviese la flor
+    // 1. Tallo 3D colocado detrás (z = -1.2)
     const stemGeo = new THREE.CylinderGeometry(0.6, 0.9, 1.0, 16);
     stemGeo.translate(0, 0.5, 0);
     const stemMesh = new THREE.Mesh(stemGeo, stemMat);
@@ -923,7 +1093,6 @@
     // 3. Cabeza Floral Grandota
     const flowerHead = new THREE.Group();
 
-    // Cáliz verde posterior sellando la unión con el tallo
     const calyxMat = new THREE.MeshStandardMaterial({ color: 0x1b5e20, roughness: 0.8 });
     const calyxGeo = new THREE.CylinderGeometry(4.6, 1.4, 1.6, 20);
     calyxGeo.rotateX(Math.PI / 2);
@@ -931,7 +1100,6 @@
     calyxMesh.position.set(0, 0, -0.9);
     flowerHead.add(calyxMesh);
 
-    // Centro con textura Fibonacci y Corazón con la "M"
     const seedTex = createSunflowerSeedTexture();
     const seedGeo = new THREE.CircleGeometry(4.6, 36);
     const seedMat = new THREE.MeshBasicMaterial({
@@ -949,7 +1117,6 @@
     flowerHead.add(seedMesh);
     interactiveObjects.push(seedMesh);
 
-    // 48 Pétalos frondosos en 2 capas concéntricas
     const petalShape = new THREE.Shape();
     petalShape.moveTo(0, 0);
     petalShape.quadraticCurveTo(1.5, 3.8, 0, 8.8);
@@ -972,7 +1139,7 @@
       flowerHead.add(p2);
     }
 
-    flowerHead.rotation.x = 0.32; // Inclinado hacia la cámara
+    flowerHead.rotation.x = 0.32;
     flowerHead.scale.set(0.001, 0.001, 0.001);
     flowerHead.position.set(0, -10 + 2.0, 0);
     centerSunflower3D.add(flowerHead);
@@ -1007,7 +1174,6 @@
 
     if (centerSunflower3D) {
       const u = centerSunflower3D.userData;
-      // Altura del tallo: crece de 2.0 a 9.5 para quedar justo debajo del letrero
       u.targetHeight = 2.0 + sunflowerGrowthProgress * 7.5;
 
       if (count < 2) {
@@ -1029,11 +1195,9 @@
   // --- NÚCLEO CENTRAL: MAYBETH Y BOTONCITO ROJITO "CUCHI CUCHI" ---
   function createCentralMaybeth() {
     centralMaybethGroup = new THREE.Group();
-    // Ubicado en y = 14, z = 12 para que esté flotando majestuosamente arriba del girasol
     centralMaybethGroup.position.set(0, 14, 12);
     centralMaybethGroup.rotation.x = -0.15;
 
-    // Cartel MAYBETH en canvas procedural
     const mCanvas = document.createElement('canvas');
     mCanvas.width = 1024;
     mCanvas.height = 256;
@@ -1045,7 +1209,6 @@
     mCtx.fillStyle = mBg;
     roundRect(mCtx, 16, 16, 992, 224, 42, true, false);
 
-    // Borde dorado doble
     mCtx.strokeStyle = '#ffd700';
     mCtx.lineWidth = 6;
     roundRect(mCtx, 16, 16, 992, 224, 42, false, true);
@@ -1053,14 +1216,12 @@
     mCtx.lineWidth = 14;
     roundRect(mCtx, 8, 8, 1008, 240, 48, false, true);
 
-    // Estrellas doradas en las esquinas
     mCtx.fillStyle = '#ffd700';
     mCtx.font = 'bold 46px serif';
     mCtx.textAlign = 'center';
     mCtx.fillText('★', 75, 102);
     mCtx.fillText('★', 949, 102);
 
-    // Nombre MAYBETH grande y brillante
     mCtx.shadowColor = '#ffd700';
     mCtx.shadowBlur = 42;
     mCtx.fillStyle = '#ffffff';
@@ -1068,7 +1229,6 @@
     mCtx.textAlign = 'center';
     mCtx.fillText('MAYBETH', 512, 146);
 
-    // Subtítulo con "cuchi cuchi"
     mCtx.shadowBlur = 12;
     mCtx.shadowColor = '#ff88aa';
     mCtx.fillStyle = '#ffcce0';
@@ -1098,7 +1258,7 @@
     centralMaybethGroup.add(maybethSprite);
     interactiveObjects.push(maybethSprite);
 
-    // BOTONCITO ROJITO DISIMULADO "CUCHI CUCHI" (EASTER EGG DE FOTO)
+    // BOTONCITO ROJITO DISIMULADO "CUCHI CUCHI"
     const btnCanvas = document.createElement('canvas');
     btnCanvas.width = 256;
     btnCanvas.height = 96;
@@ -1125,7 +1285,6 @@
       depthWrite: false
     });
     const cuchiBtnSprite = new THREE.Sprite(btnMat);
-    // Ubicado sutilmente en la esquina inferior derecha sin tapar texto
     cuchiBtnSprite.scale.set(16, 6, 1);
     cuchiBtnSprite.position.set(45, -13, 1.5);
     cuchiBtnSprite.userData = {
@@ -1134,7 +1293,7 @@
     centralMaybethGroup.add(cuchiBtnSprite);
     interactiveObjects.push(cuchiBtnSprite);
 
-    // Corazones Rojos con "Uli" orbitando armoniosamente
+    // Corazones Rojos con "Uli" orbitando
     const uliHeartTex = textureLoader.load('assets/sprite_heart_uli.png');
     const heartMat = new THREE.SpriteMaterial({
       map: uliHeartTex,
@@ -1275,14 +1434,12 @@
     for (let i = 0; i < meteorCount; i++) {
       const msg = meteorMessages[i % meteorMessages.length];
 
-      // Canvas grande 1024x256 para máxima nitidez y tamaño
       const mc = document.createElement('canvas');
       mc.width = 1024;
       mc.height = 256;
       const mctx = mc.getContext('2d');
       mctx.clearRect(0, 0, 1024, 256);
 
-      // Glow exterior dorado potente
       mctx.shadowColor = '#ffd700';
       mctx.shadowBlur = 35;
       mctx.font = 'bold italic 72px "Georgia", serif';
@@ -1298,7 +1455,6 @@
 
       const mTex = new THREE.CanvasTexture(mc);
 
-      // Estela brillante del meteorito
       const trailGeo = new THREE.BufferGeometry();
       const trailLen = 40;
       const trailPos = new Float32Array(trailLen * 3);
@@ -1324,7 +1480,6 @@
       });
       const trailLine = new THREE.Line(trailGeo, trailMat);
 
-      // Sprite de texto ampliado y legible
       const textMat = new THREE.SpriteMaterial({
         map: mTex,
         transparent: true,
@@ -1364,96 +1519,226 @@
     }
   }
 
-  // --- INTRO ÉPICA DE 6.5 SEGUNDOS (COLAPSO EN ESPIRAL Y NACIMIENTO DE LA GALAXIA) ---
+  // --- INTRO ÉPICA DUAL DE 6.8 SEGUNDOS (HIPERESPACIO CON FLORES + NACIMIENTO GALÁCTICO) ---
   function startEpicIntro() {
     isIntroAnimating = true;
     introStartTime = performance.now();
     controls.enabled = false;
 
-    // Los elementos inician ocultos para nacer del vórtice galáctico
+    // Ocultar UI superior e inferior para experiencia cinematográfica completa
+    const uiOverlay = document.getElementById('ui-overlay');
+    if (uiOverlay) {
+      uiOverlay.style.opacity = '0';
+      uiOverlay.style.transition = 'opacity 1.4s ease';
+    }
+
+    // Activar motor de hiperespacio
+    if (warpGroup) {
+      warpGroup.visible = true;
+      if (warpStarsMesh) warpStarsMesh.material.opacity = 0.95;
+      warpRings.forEach(r => { r.material.opacity = 0.55; });
+      warpFlowers.forEach(wf => {
+        wf.flowerSprite.material.opacity = 1.0;
+        wf.labelSprite.material.opacity = 1.0;
+      });
+    }
+
+    // La galaxia inicia lejana en el fondo
+    universeGroup.position.z = -550;
+    universeGroup.scale.set(0.12, 0.12, 0.12);
+
+    // Ocultar elementos centrales para que nazcan al llegar
     if (centralMaybethGroup) centralMaybethGroup.scale.set(0.001, 0.001, 0.001);
     if (flowersGroup) flowersGroup.scale.set(0.001, 0.001, 0.001);
     if (vayolettSignGroup) vayolettSignGroup.scale.set(0.001, 0.001, 0.001);
     if (celestialHeartGroup) celestialHeartGroup.scale.set(0.001, 0.001, 0.001);
 
-    // Posición inicial de cámara mirando hacia el vórtice
-    camera.position.set(0, 180, 50);
-    camera.lookAt(0, 0, 0);
+    // Cámara mirando de frente hacia el túnel de luz
+    camera.position.set(0, 0, 180);
+    camera.lookAt(0, 0, -400);
   }
 
-  function updateEpicIntro(now) {
+  function updateEpicIntro(now, delta) {
     if (!isIntroAnimating) return;
 
     const elapsed = now - introStartTime;
     const p = Math.min(elapsed / INTRO_DURATION, 1.0);
 
-    // Easing suave cuártico para el colapso
-    const ease = 1 - Math.pow(1 - p, 4);
-
-    // 1. Las partículas de la galaxia se unen en espiral hacia sus posiciones
-    if (galaxyPoints) {
-      const pos = galaxyPoints.geometry.attributes.position.array;
-      const count = GALAXY_PARAMS.count;
-      for (let i = 0; i < count; i++) {
-        const i3 = i * 3;
-        pos[i3] = galaxyStartPos[i3] + (galaxyTargetPos[i3] - galaxyStartPos[i3]) * ease;
-        pos[i3 + 1] = galaxyStartPos[i3 + 1] + (galaxyTargetPos[i3 + 1] - galaxyStartPos[i3 + 1]) * ease;
-        pos[i3 + 2] = galaxyStartPos[i3 + 2] + (galaxyTargetPos[i3 + 2] - galaxyStartPos[i3 + 2]) * ease;
+    // --- FASE 1: VIAJE A LA VELOCIDAD DE LA LUZ (0s a 3.3s) ---
+    if (elapsed < 3400) {
+      const warpProg = Math.min(elapsed / 3000, 1.0);
+      let speedFactor;
+      if (warpProg < 0.25) {
+        speedFactor = Math.pow(warpProg / 0.25, 2);
+      } else if (warpProg < 0.75) {
+        speedFactor = 1.0;
+      } else {
+        const decel = (warpProg - 0.75) / 0.25;
+        speedFactor = Math.pow(1 - decel, 2);
       }
-      galaxyPoints.geometry.attributes.position.needsUpdate = true;
-      galaxyPoints.rotation.y = elapsed * 0.0008;
+
+      // 1. Estrellas de hiperespacio pasando a toda velocidad
+      if (warpStarsMesh) {
+        const pos = warpStarsMesh.geometry.attributes.position.array;
+        const sData = warpStarsMesh.userData.starData;
+        const count = sData.length;
+        for (let i = 0; i < count; i++) {
+          let z = pos[i * 3 + 2] + speedFactor * sData[i].speed * delta;
+          if (z > camera.position.z + 40) {
+            z = -480;
+          }
+          pos[i * 3 + 2] = z;
+        }
+        warpStarsMesh.geometry.attributes.position.needsUpdate = true;
+      }
+
+      // 2. Anillos de hiperespacio
+      warpRings.forEach((ring) => {
+        ring.position.z += speedFactor * 420 * delta;
+        if (ring.position.z > camera.position.z + 20) {
+          ring.position.z = -480;
+        }
+        ring.rotation.z += 0.9 * delta;
+      });
+
+      // 3. Flores volando a tu alrededor con frases de amor ("fuaaaa")
+      warpFlowers.forEach((f) => {
+        f.z += speedFactor * f.speed * delta;
+        if (f.z > camera.position.z + 35) {
+          f.z = -480;
+          f.angle = Math.random() * Math.PI * 2;
+          f.radius = 5 + Math.random() * 45;
+          f.x = Math.cos(f.angle) * f.radius;
+          f.y = Math.sin(f.angle) * f.radius;
+        }
+        f.group.position.set(f.x, f.y, f.z);
+        f.flowerSprite.material.rotation += f.rotSpeed * delta;
+      });
+
+      // 4. La galaxia se acerca desde el fondo
+      if (elapsed < 2600) {
+        const gProg = elapsed / 2600;
+        const gEase = Math.pow(gProg, 2.2);
+        universeGroup.position.z = -550 + gEase * 320;
+        const gSc = 0.12 + gEase * 0.45;
+        universeGroup.scale.set(gSc, gSc, gSc);
+        camera.lookAt(0, 0, -400);
+      } else {
+        // Transición de salida de hiperespacio (2.6s a 3.4s)
+        const exitProg = (elapsed - 2600) / 800;
+        const ease = 1 - Math.pow(1 - exitProg, 3);
+
+        universeGroup.position.z = -230 + ease * 230;
+        const gSc = 0.57 + ease * 0.43;
+        universeGroup.scale.set(gSc, gSc, gSc);
+
+        // La cámara transiciona suavemente hacia arriba
+        camera.position.x = 0;
+        camera.position.y = ease * 140;
+        camera.position.z = 180 - ease * (180 - 50);
+        camera.lookAt(0, 0, 0);
+
+        // Desvanecer túnel de hiperespacio
+        if (warpGroup) {
+          const fade = Math.max(0, 1 - ease);
+          warpStarsMesh.material.opacity = fade * 0.95;
+          warpRings.forEach(r => { r.material.opacity = fade * 0.55; });
+          warpFlowers.forEach(wf => {
+            wf.flowerSprite.material.opacity = fade;
+            wf.labelSprite.material.opacity = fade;
+          });
+        }
+      }
+    } else {
+      // Túnel apagado al llegar a la galaxia
+      if (warpGroup && warpGroup.visible) {
+        warpGroup.visible = false;
+      }
+      universeGroup.position.set(0, 0, 0);
+      universeGroup.scale.set(1, 1, 1);
+
+      // --- FASE 2: LLEGADA Y FORMACIÓN EN ESPIRAL DE LA GALAXIA (3.3s a 6.8s) ---
+      const formProgress = (elapsed - 3300) / 3500;
+      const pForm = Math.min(Math.max(formProgress, 0), 1.0);
+
+      // Easing cuártico para el colapso ordenado de las 65,000 partículas en espiral
+      const ease = 1 - Math.pow(1 - pForm, 4);
+
+      if (galaxyPoints) {
+        const pos = galaxyPoints.geometry.attributes.position.array;
+        const count = GALAXY_PARAMS.count;
+        for (let i = 0; i < count; i++) {
+          const i3 = i * 3;
+          pos[i3] = galaxyStartPos[i3] + (galaxyTargetPos[i3] - galaxyStartPos[i3]) * ease;
+          pos[i3 + 1] = galaxyStartPos[i3 + 1] + (galaxyTargetPos[i3 + 1] - galaxyStartPos[i3 + 1]) * ease;
+          pos[i3 + 2] = galaxyStartPos[i3 + 2] + (galaxyTargetPos[i3 + 2] - galaxyStartPos[i3 + 2]) * ease;
+        }
+        galaxyPoints.geometry.attributes.position.needsUpdate = true;
+        galaxyPoints.rotation.y = elapsed * 0.0008;
+      }
+
+      // Descenso y encuadre cinematográfico de la cámara
+      if (pForm < 0.90) {
+        const camProg = Math.min(pForm / 0.90, 1.0);
+        const camEase = 1 - Math.pow(1 - camProg, 3);
+        camera.position.x = 0;
+        camera.position.y = 140 - camEase * (140 - 52);
+        camera.position.z = 50 + camEase * (135 - 50);
+        camera.lookAt(0, 2, 0);
+      }
+
+      // Nacimiento progresivo del letrero MAYBETH, el Corazón Celestial y las 20 flores
+      if (pForm > 0.30 && centralMaybethGroup) {
+        const mProg = Math.min((pForm - 0.30) / 0.40, 1.0);
+        const mEase = 1 - Math.pow(1 - mProg, 3);
+        centralMaybethGroup.scale.set(mEase, mEase, mEase);
+      }
+      if (pForm > 0.45 && celestialHeartGroup) {
+        const heartProg = Math.min((pForm - 0.45) / 0.38, 1.0);
+        const hEase = 1 - Math.pow(1 - heartProg, 3);
+        celestialHeartGroup.scale.set(hEase, hEase, hEase);
+      }
+      if (pForm > 0.55 && flowersGroup) {
+        const fProg = Math.min((pForm - 0.55) / 0.35, 1.0);
+        const fEase = 1 - Math.pow(1 - fProg, 3);
+        flowersGroup.scale.set(fEase, fEase, fEase);
+      }
+      if (pForm > 0.65 && vayolettSignGroup) {
+        const vProg = Math.min((pForm - 0.65) / 0.30, 1.0);
+        const vEase = 1 - Math.pow(1 - vProg, 3);
+        vayolettSignGroup.scale.set(vEase, vEase, vEase);
+
+        const uiOverlay = document.getElementById('ui-overlay');
+        if (uiOverlay && uiOverlay.style.opacity !== '1') {
+          uiOverlay.style.opacity = '1';
+        }
+      }
     }
 
-    // 2. Vuelo cinemático de cámara desde arriba hacia la posición orbital
-    if (p < 0.85) {
-      const camProg = Math.min(p / 0.85, 1.0);
-      const camEase = 1 - Math.pow(1 - camProg, 3);
-      camera.position.x = 0;
-      camera.position.y = 180 - camEase * (180 - 52);
-      camera.position.z = 50 + camEase * (135 - 50);
-      camera.lookAt(0, 0, 0);
-    }
-
-    // 3. Nacimiento progresivo de los elementos de la galaxia
-    if (p > 0.40 && centralMaybethGroup) {
-      const mProg = Math.min((p - 0.40) / 0.35, 1.0);
-      const mEase = 1 - Math.pow(1 - mProg, 3);
-      centralMaybethGroup.scale.set(mEase, mEase, mEase);
-    }
-    if (p > 0.50 && celestialHeartGroup) {
-      const heartProg = Math.min((p - 0.50) / 0.35, 1.0);
-      const hEase = 1 - Math.pow(1 - heartProg, 3);
-      celestialHeartGroup.scale.set(hEase, hEase, hEase);
-    }
-    if (p > 0.58 && flowersGroup) {
-      const fProg = Math.min((p - 0.58) / 0.35, 1.0);
-      const fEase = 1 - Math.pow(1 - fProg, 3);
-      flowersGroup.scale.set(fEase, fEase, fEase);
-    }
-    if (p > 0.65 && vayolettSignGroup) {
-      const vProg = Math.min((p - 0.65) / 0.30, 1.0);
-      const vEase = 1 - Math.pow(1 - vProg, 3);
-      vayolettSignGroup.scale.set(vEase, vEase, vEase);
-    }
-
-    // 4. Finalización de la intro
+    // --- FINALIZACIÓN DE LA INTRO (a los 6.8s) ---
     if (p >= 1.0) {
       isIntroAnimating = false;
       controls.enabled = true;
       controls.autoRotate = true;
+      if (warpGroup) warpGroup.visible = false;
+      universeGroup.position.set(0, 0, 0);
+      universeGroup.scale.set(1, 1, 1);
       if (centralMaybethGroup) centralMaybethGroup.scale.set(1, 1, 1);
       if (flowersGroup) flowersGroup.scale.set(1, 1, 1);
       if (vayolettSignGroup) vayolettSignGroup.scale.set(1, 1, 1);
       if (celestialHeartGroup) celestialHeartGroup.scale.set(1, 1, 1);
       camera.position.set(0, 52, 135);
-      controls.target.set(0, 0, 0);
+      controls.target.set(0, 2, 0);
+
+      const uiOverlay = document.getElementById('ui-overlay');
+      if (uiOverlay) uiOverlay.style.opacity = '1';
     }
   }
 
   // --- AUDIO Y CONTROL DE VOLUMEN ---
   function setupAudioControls() {
     if (bgMusic) {
-      bgMusic.volume = 0.75;
+      bgMusic.volume = 0.85;
     }
 
     if (volumeSlider) {
@@ -1480,7 +1765,7 @@
           if (volumeSlider) volumeSlider.value = 0;
           volIcon.textContent = '🔇';
         } else {
-          const restore = bgMusic.dataset.lastVol || 0.75;
+          const restore = bgMusic.dataset.lastVol || 0.85;
           bgMusic.volume = restore;
           if (volumeSlider) volumeSlider.value = restore;
           volIcon.textContent = '🔊';
@@ -1491,6 +1776,8 @@
 
   // --- GESTIÓN DE EVENTOS ---
   function setupEventListeners() {
+    // Escucha inmediata para reproducir música sin demora al primer toque
+    introScreen.addEventListener('pointerdown', startExperience);
     introScreen.addEventListener('click', startExperience);
     introScreen.addEventListener('touchstart', startExperience, { passive: true });
 
@@ -1526,26 +1813,40 @@
     if (isStarted) return;
     isStarted = true;
 
-    playAudio();
+    // REPRODUCCIÓN INMEDIATA DE MÚSICA AL TOCAR INICIAR
+    if (bgMusic) {
+      bgMusic.currentTime = 0;
+      bgMusic.muted = false;
+      bgMusic.volume = (volumeSlider ? parseFloat(volumeSlider.value) : 0.85);
+      const playPromise = bgMusic.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          if (musicBars) musicBars.classList.remove('paused');
+          if (audioStatusText) audioStatusText.textContent = 'Música';
+        }).catch((err) => {
+          console.warn('Audio bloqueado por navegador, programando desbloqueo:', err);
+          const unlock = () => {
+            bgMusic.muted = false;
+            bgMusic.play();
+            if (musicBars) musicBars.classList.remove('paused');
+            if (audioStatusText) audioStatusText.textContent = 'Música';
+            document.removeEventListener('pointerdown', unlock);
+            document.removeEventListener('click', unlock);
+            document.removeEventListener('touchstart', unlock);
+          };
+          document.addEventListener('pointerdown', unlock, { once: true });
+          document.addEventListener('click', unlock, { once: true });
+          document.addEventListener('touchstart', unlock, { once: true });
+        });
+      }
+    }
 
     introScreen.classList.add('fade-out');
     setTimeout(() => {
       if (introScreen) introScreen.style.display = 'none';
-    }, 1100);
+    }, 1000);
 
     startEpicIntro();
-  }
-
-  function playAudio() {
-    if (!bgMusic) return;
-    bgMusic.play().then(() => {
-      musicBars.classList.remove('paused');
-      audioStatusText.textContent = 'Música';
-    }).catch((err) => {
-      console.warn('Autoplay bloqueado:', err);
-      musicBars.classList.add('paused');
-      audioStatusText.textContent = 'Activar';
-    });
   }
 
   function toggleAudio() {
@@ -1670,7 +1971,6 @@
         svg: selected.userData.svg
       });
     } else if (selected.userData.isCuchiCuchi) {
-      // EASTER EGG DE FOTO CUCHI CUCHI
       openPhotoModal();
     }
   }
@@ -1686,7 +1986,6 @@
     photoModal.classList.add('active');
     controls.autoRotate = false;
 
-    // Si lo ve por más de 2 segundos, aparece el botón ¡Mírame!
     clearTimeout(mirameTimer);
     mirameTimer = setTimeout(() => {
       btnMirame.classList.remove('hidden');
@@ -1818,9 +2117,9 @@
     const elapsedTime = clock.getElapsedTime();
     const now = performance.now();
 
-    // Actualización de la intro si está activa
+    // Actualización de la intro si está activa (recibe delta para el hiperespacio)
     if (isIntroAnimating) {
-      updateEpicIntro(now);
+      updateEpicIntro(now, delta);
     } else if (galaxyPoints) {
       galaxyPoints.rotation.y = elapsedTime * 0.035;
     }
@@ -1856,8 +2155,7 @@
       u.currentHeadScale = THREE.MathUtils.lerp(u.currentHeadScale, u.targetHeadScale, 0.06);
       u.flowerHead.scale.set(u.currentHeadScale, u.currentHeadScale, u.currentHeadScale);
 
-      // Posición de la cabeza sujeta a la parte superior del tallo
-      u.flowerHead.position.y = -12 + u.currentHeight;
+      u.flowerHead.position.y = -10 + u.currentHeight;
       u.flowerHead.rotation.z = Math.sin(elapsedTime * 0.8) * 0.05;
 
       const leafScale = Math.min(0.25 + (u.currentHeight / 12.0) * 0.85, 1.15);
