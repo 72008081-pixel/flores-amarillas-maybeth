@@ -193,6 +193,8 @@ html, body {
   align-items: center;
   gap: 6px;
   margin-top: 6px;
+  width: fit-content;
+  max-width: 260px;
   box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
   animation: pulse-growth 2.5s ease-in-out infinite;
 }
